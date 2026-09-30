@@ -2,22 +2,18 @@
   "name": "daily-routine",
   "version": "1.0.0-beta.2",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "start:build": "npm run build && serve -s build",
+    "start": "vite",
+    "build": "vite build",
+    "start:build": "vite build && vite preview",
     "test": "react-scripts test",
     "test:update": "npm test -- --watchAll=false --updateSnapshot",
     "test:ci": "npm test -- --watchAll=false --coverage --runInBand --no-cache",
-    "e2e:dev": "npm run cypress:dev & npm start",
-    "e2e": "npm run cypress & npm start",
-    "cypress:dev": "npm run wait-on-server && cypress open",
-    "cypress": "npm run wait-on-server && cypress run",
-    "wait-on-server": "wait-on http://localhost:3000",
-    "eject": "react-scripts eject",
-    "lint": "eslint \"src/**/*.js\"",
-    "format": "prettier --write \"src/**/*.js\"",
-    "format:check": "prettier --list-different \"src/**/*.js\""
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "dependencies": {
     "body-scroll-lock": "2.6.4",
@@ -35,112 +31,25 @@
     "react-dom": "16.9.0",
     "react-focus-lock": "2.0.4",
     "react-router-dom": "5.0.1",
-    "react-scripts": "3.1.1",
     "react-spring": "8.0.27",
     "styled-components": "4.3.2"
   },
   "devDependencies": {
+    "@eslint/js": "10.0.1",
     "@testing-library/jest-dom": "4.0.0",
     "@testing-library/react": "8.0.9",
     "@testing-library/react-hooks": "1.1.0",
-    "cypress": "3.4.1",
-    "eslint-config-prettier": "6.0.0",
-    "eslint-plugin-import": "2.18.2",
-    "husky": "2.4.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "eslint": "10.11.0",
+    "eslint-plugin-import-x": "4.17.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.12.0",
+    "husky": "9.1.7",
     "jest-styled-components": "6.3.3",
-    "lint-staged": "8.2.0",
-    "prettier": "1.18.2",
+    "lint-staged": "17.6.0",
+    "prettier": "3.9.9",
     "prop-types": "15.7.2",
     "react-test-renderer": "16.9.0",
-    "serve": "11.1.0",
-    "serve-handler": "6.1.0",
-    "wait-on": "3.3.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "plugin:import/errors",
-      "plugin:import/warnings",
-      "prettier"
-    ],
-    "plugins": [
-      "import"
-    ],
-    "rules": {
-      "no-unused-vars": [
-        "error",
-        {
-          "varsIgnorePattern": "_",
-          "argsIgnorePattern": "_"
-        }
-      ],
-      "no-console": [
-        "error"
-      ],
-      "import/order": [
-        "error",
-        {
-          "groups": [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index"
-          ]
-        }
-      ],
-      "react/prop-types": 2
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "none",
-    "printWidth": 120
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --single-quote --write",
-      "npm run lint",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/index.js",
-      "!src/serviceWorker.js",
-      "!src/setupTests.js",
-      "!src/constants/**/*",
-      "!src/components/Root/**/*",
-      "!src/components/**/index.js",
-      "!src/components/GlobalStyle/**/*",
-      "!src/quotes/**/*"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 50,
-        "functions": 70,
-        "lines": 70,
-        "statements": 70
-      }
-    }
+    "vite": "8.3.1"
   }
 }

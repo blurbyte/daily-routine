@@ -30,22 +30,14 @@ function reduceEmptyOnNegative(prev, item) {
 export function convertToDigits(nickname) {
   const words = nickname.split('-');
   // Reversing twice to "mapRight"
-  const digits = words
-    .reverse()
-    .map(getInt)
-    .reverse()
-    .reduce(reduceEmptyOnNegative);
+  const digits = words.reverse().map(getInt).reverse().reduce(reduceEmptyOnNegative);
 
   return digits;
 }
 
 export function convertToNickname(digits) {
   // Reversing twice for processing without lazy generators
-  const nickName = digits
-    .reverse()
-    .map(getWord)
-    .reverse()
-    .join('-');
+  const nickName = digits.reverse().map(getWord).reverse().join('-');
 
   return nickName;
 }

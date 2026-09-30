@@ -1,8 +1,5 @@
 ![Daily Routine - Daily Scrum Absurd Answers](https://user-images.githubusercontent.com/20565536/59495052-d1ed4980-8e8e-11e9-9dc9-e8fe0d037469.png)
 
-[![CircleCI](https://circleci.com/gh/BuildIt-Poland/daily-routine/tree/master.svg?style=svg)](https://circleci.com/gh/BuildIt-Poland/daily-routine/tree/master)
-[![codecov](https://codecov.io/gh/BuildIt-Poland/daily-routine/branch/master/graph/badge.svg)](https://codecov.io/gh/BuildIt-Poland/daily-routine)
-
 > An artificial intelligence dedicated to generating absurd and useful daily meeting quotes for endless enrichment of pointless developers existence.
 
 Check the [live version of Daily Routine](https://dailyroutine.buildit.digital/) app!
@@ -21,7 +18,6 @@ Most useful scripts for development:
 
 Other scripts which could be helpful:
 
-* `e2e:dev` - runs all e2e tests locally
 * `npm run start:build` -  starts a production version of app locally
 * `npm run test:update` - updates all tests' snapshots from scratch
 * `npm run format` - formats whole codebase with prettier

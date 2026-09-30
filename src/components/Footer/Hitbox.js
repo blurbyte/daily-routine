@@ -16,7 +16,9 @@ const Hitbox = styled.a`
   transition: all 150ms linear;
 
   &.focus-visible {
-    box-shadow: -0.4rem 0 0 0 ${colorPink}, 0.4rem 0 0 0 ${colorPink};
+    box-shadow:
+      -0.4rem 0 0 0 ${colorPink},
+      0.4rem 0 0 0 ${colorPink};
     background-color: ${colorPink};
   }
 `;

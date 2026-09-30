@@ -9,12 +9,7 @@
 /coverage
 
 # production
-/build
-
-# cypress
-/cypress/screenshots
-/cypress/plugins
-/cypress/fixtures
+/dist
 
 # misc
 .DS_Store
