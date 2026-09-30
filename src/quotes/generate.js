@@ -1,7 +1,3 @@
-import includes from 'lodash.includes';
-import isEmpty from 'lodash.isempty';
-import unzip from 'lodash.unzip';
-
 import { convertToDigits, convertToNickname } from './encode';
 import { FUTURE, PAST, PHRASES, PREFIX, ROLES } from './quotes';
 
@@ -10,12 +6,13 @@ export function getQuoteFromID(role, action, quoteID) {
     return;
   }
 
-  if (!includes(getActions(), action)) {
+  const actions = getActions();
+  if (!actions.includes(action)) {
     return;
   }
 
   const digits = convertToDigits(quoteID);
-  if (isEmpty(digits)) {
+  if (!Array.isArray(digits) || digits.length === 0) {
     return;
   }
 
@@ -61,9 +58,9 @@ function getRandomQuoteAndID(role, action) {
 
     return [item, index];
   };
-  const expressionsAndIndexes = getOptions(role, action);
-  const [expressions, index] = unzip(expressionsAndIndexes.map(sampleAndIndex));
-  const expression = expressions.join(' ');
+  const samples = getOptions(role, action).map(sampleAndIndex);
+  const expression = samples.map(([item]) => item).join(' ');
+  const index = samples.map(([, itemIndex]) => itemIndex);
 
   return [expression, index];
 }

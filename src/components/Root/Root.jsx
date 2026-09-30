@@ -1,7 +1,4 @@
-import '../../styles/sanitize.css';
-// CSS focus-visible polyfill
-// Apply focus styles only when navigating with keyboard
-import 'focus-visible/dist/focus-visible';
+import '../../styles/reset.css';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 

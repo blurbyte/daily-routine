@@ -1,7 +1,3 @@
-import isEqual from 'lodash.isequal';
-import partialRight from 'lodash.partialright';
-import mod from 'mod-op';
-
 import { ADJECTIVES, ADVERBS, NOUNS } from './nicknameParts';
 
 // URL-NICKNAME ENCODING
@@ -10,17 +6,19 @@ import { ADJECTIVES, ADVERBS, NOUNS } from './nicknameParts';
 const DOMAIN = [[ADVERBS, ADVERBS, ADJECTIVES], NOUNS];
 const REPEATL = DOMAIN[0].length;
 
-function getWordFromDomain(digit, index, _, domain) {
-  return index === 0 ? domain[1][digit] : domain[0][mod(REPEATL - index, REPEATL)][digit];
+function mod(number, divisor) {
+  return ((number % divisor) + divisor) % divisor;
 }
-function getIntFromDomain(word, index, _, domain) {
-  return index === 0 ? domain[1].indexOf(word) : domain[0][mod(REPEATL - index, REPEATL)].indexOf(word);
+
+function getWord(digit, index) {
+  return index === 0 ? DOMAIN[1][digit] : DOMAIN[0][mod(REPEATL - index, REPEATL)][digit];
 }
-const getWord = partialRight(getWordFromDomain, DOMAIN);
-const getInt = partialRight(getIntFromDomain, DOMAIN);
+function getInt(word, index) {
+  return index === 0 ? DOMAIN[1].indexOf(word) : DOMAIN[0][mod(REPEATL - index, REPEATL)].indexOf(word);
+}
 
 function reduceEmptyOnNegative(prev, item) {
-  if (item < 0 || isEqual(prev, [])) {
+  if (item < 0 || (Array.isArray(prev) && prev.length === 0)) {
     return [];
   }
 

@@ -22,7 +22,7 @@ const Styled = styled.button`
   transition: all 150ms linear;
   border-radius: ${borderRadius};
 
-  &.focus-visible {
+  &:focus-visible {
     background-color: ${props => (props.$alternativeFocusStyle ? colorDarkPink : colorPink)};
   }
 `;

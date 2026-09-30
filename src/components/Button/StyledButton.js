@@ -41,7 +41,7 @@ const StyledButton = styled.button`
     cursor: pointer;
   }
 
-  &.focus-visible {
+  &:focus-visible {
     box-shadow: 0 0 0 0.6rem ${colorDarkPink};
   }
 

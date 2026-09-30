@@ -25,7 +25,7 @@ const Link = styled(LinkBase)`
   user-select: none;
   transition: all 150ms linear;
 
-  &.focus-visible {
+  &:focus-visible {
     background-color: ${colorPink};
   }
 
