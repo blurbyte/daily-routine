@@ -1,13 +1,11 @@
 import { useContext } from 'react';
-import { withRouter } from 'react-router';
-import { Link as LinkBase } from 'react-router-dom';
+import { Link as LinkBase, useLocation } from 'react-router';
 import styled from 'styled-components';
 
 import { ROOT_PATH } from '../../constants/routes';
 import { RouteTransitionAnimationContext } from '../../context/RouteTransitionAnimationContext';
 import { borderRadius, borderWidthThin, colorBlack, colorPink, spacingSmall } from '../../styles/designTokens';
 import media from '../../styles/media';
-import { location } from '../../types';
 import { Logo as LogoIcon } from '../Icons';
 
 const Link = styled(LinkBase)`
@@ -50,7 +48,8 @@ const Tagline = styled.p`
   text-transform: uppercase;
 `;
 
-function Logo({ location }) {
+function Logo() {
+  const location = useLocation();
   const { animateAndRedirect } = useContext(RouteTransitionAnimationContext);
 
   function isRootPath(location) {
@@ -77,8 +76,4 @@ function Logo({ location }) {
   );
 }
 
-Logo.propTypes = {
-  location
-};
-
-export default withRouter(Logo);
+export default Logo;

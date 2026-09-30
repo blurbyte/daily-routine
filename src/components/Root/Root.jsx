@@ -1,6 +1,6 @@
 import '../../styles/reset.css';
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router';
 
 import App from '../App';
 import GlobalStyle from '../GlobalStyle';

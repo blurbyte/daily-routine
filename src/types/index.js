@@ -1,6 +1,6 @@
 // Centralised type definitions for common cases
 
-import { func, oneOf, shape, string } from 'prop-types';
+import { oneOf, shape, string } from 'prop-types';
 
 import { FEMALE, MALE } from '../constants/genders';
 import { BRAG, CONFESS, DEFAULT } from '../constants/roleActions';
@@ -15,17 +15,6 @@ export const pose = oneOf([DEFAULT, BRAG, CONFESS]);
 export const theme = shape({
   primaryColor: string.isRequired,
   secondaryColor: string.isRequired
-});
-
-export const location = shape({
-  pathname: string.isRequired,
-  hash: string.isRequired,
-  key: string,
-  search: string
-});
-export const history = shape({
-  location: location.isRequired,
-  push: func.isRequired
 });
 
 export const speechBubbleVariant = oneOf([SPEECH, THOUGHT]);

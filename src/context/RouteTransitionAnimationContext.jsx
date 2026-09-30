@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
 import { createContext, useState } from 'react';
-
-import { history } from '../types';
+import { useNavigate } from 'react-router';
 
 const RouteTransitionAnimationContext = createContext();
 const { Provider } = RouteTransitionAnimationContext;
 
-function RouteTransitionAnimationProvider({ children, history }) {
+function RouteTransitionAnimationProvider({ children }) {
   const REDIRECT_DELAY = 250;
+  const navigate = useNavigate();
 
   function redirectWithDelay(url) {
     setTimeout(() => {
       // Restore scroll position to top of a page
       window.scrollTo(0, 0);
-      history.push(url);
+      navigate(url);
     }, REDIRECT_DELAY);
   }
 
@@ -32,8 +32,7 @@ function RouteTransitionAnimationProvider({ children, history }) {
 }
 
 RouteTransitionAnimationProvider.propTypes = {
-  children: PropTypes.node,
-  history: history.isRequired
+  children: PropTypes.node
 };
 
 export { RouteTransitionAnimationContext, RouteTransitionAnimationProvider };

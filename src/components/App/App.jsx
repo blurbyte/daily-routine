@@ -1,11 +1,10 @@
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 
 import { BACK_END_ROLE, DEV_OPS_ROLE, FRONT_END_ROLE } from '../../constants/roles';
 import { ROOT_PATH } from '../../constants/routes';
 import { GenderProvider } from '../../context/GenderContext';
 import { RouteTransitionAnimationProvider } from '../../context/RouteTransitionAnimationContext';
-import { history, location } from '../../types';
 import generateTheme from '../../utils/generateTheme';
 import AppBar from '../AppBar';
 import BackEndRolePage from '../BackEndRolePage';
@@ -18,9 +17,11 @@ import PageNotFound from '../PageNotFound';
 import RouteTransitionAnimation from '../RouteTransitionAnimation';
 import Wrapper from './Wrapper';
 
-function App({ location, history }) {
+function App() {
+  const location = useLocation();
+
   return (
-    <RouteTransitionAnimationProvider history={history}>
+    <RouteTransitionAnimationProvider>
       <ThemeProvider theme={generateTheme(location.pathname)}>
         <>
           <RouteTransitionAnimation location={location} />
@@ -29,13 +30,13 @@ function App({ location, history }) {
               <AppBar />
               <ErrorBoundary>
                 <main>
-                  <Switch>
-                    <Route exact path={ROOT_PATH} component={LandingPage} />
-                    <Route path={`/${FRONT_END_ROLE}`} component={FrontEndRolePage} />
-                    <Route path={`/${BACK_END_ROLE}`} component={BackEndRolePage} />
-                    <Route path={`/${DEV_OPS_ROLE}`} component={DevOpsRolePage} />
-                    <Route path="*" component={PageNotFound} />
-                  </Switch>
+                  <Routes>
+                    <Route path={ROOT_PATH} element={<LandingPage />} />
+                    <Route path={`/${FRONT_END_ROLE}/*`} element={<FrontEndRolePage />} />
+                    <Route path={`/${BACK_END_ROLE}/*`} element={<BackEndRolePage />} />
+                    <Route path={`/${DEV_OPS_ROLE}/*`} element={<DevOpsRolePage />} />
+                    <Route path="*" element={<PageNotFound />} />
+                  </Routes>
                 </main>
               </ErrorBoundary>
               <Footer />
@@ -47,9 +48,4 @@ function App({ location, history }) {
   );
 }
 
-App.propTypes = {
-  location,
-  history
-};
-
-export default withRouter(App);
+export default App;

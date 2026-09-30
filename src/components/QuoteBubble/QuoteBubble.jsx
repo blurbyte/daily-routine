@@ -1,12 +1,11 @@
 import { useTransition } from '@react-spring/web';
 import PropTypes from 'prop-types';
 import { useContext, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 import { SPEECH, THOUGHT } from '../../constants/speechBubbleVariant';
 import { QuoteContext } from '../../context/QuoteContext';
 import { colorWhite } from '../../styles/designTokens';
-import { location } from '../../types';
 import ErrorBoundary from '../ErrorBoundary';
 import Bubble from './Bubble';
 import BubbleButtons from './BubbleButtons';
@@ -19,8 +18,8 @@ import Wrapper from './Wrapper';
 const ERROR_MESSAGE =
   ' – The blockchain distributed ledger failed to achieve quorum with deep learning neural network of your pseudo-generated Turning complaisant daily message.';
 
-function QuoteBubble({ location, className }) {
-  const { pathname } = location;
+function QuoteBubble({ className }) {
+  const { pathname } = useLocation();
   const { handleQuoteChange } = useContext(QuoteContext);
 
   const bubble = useBubble(pathname);
@@ -73,8 +72,7 @@ function QuoteBubble({ location, className }) {
 }
 
 QuoteBubble.propTypes = {
-  location: location.isRequired,
   className: PropTypes.string
 };
 
-export default withRouter(QuoteBubble);
+export default QuoteBubble;
