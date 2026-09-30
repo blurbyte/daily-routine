@@ -1,8 +1,8 @@
-import partialRight from 'lodash.partialright';
 import isEqual from 'lodash.isequal';
+import partialRight from 'lodash.partialright';
 import mod from 'mod-op';
 
-import { ADVERBS, ADJECTIVES, NOUNS } from './nicknameParts';
+import { ADJECTIVES, ADVERBS, NOUNS } from './nicknameParts';
 
 // URL-NICKNAME ENCODING
 

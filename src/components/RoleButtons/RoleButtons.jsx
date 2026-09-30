@@ -1,15 +1,13 @@
 // Set of links to various roles
 
-import React from 'react';
-
-import ErrorBoundary from '../ErrorBoundary';
 import Content from '../Content';
+import ErrorBoundary from '../ErrorBoundary';
 import Headline from '../Headline';
 import Navigation from '../Navigation';
-import Wrapper from './Wrapper';
-import FrontEndButton from './FrontEndButton';
 import BackEndButton from './BackEndButton';
 import DevOpsButton from './DevOpsButton';
+import FrontEndButton from './FrontEndButton';
+import Wrapper from './Wrapper';
 
 function RoleButtons() {
   return (

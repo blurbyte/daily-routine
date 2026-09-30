@@ -1,14 +1,12 @@
-import React from 'react';
-
 import { DEV_OPS_ROLE, DEV_OPS_ROLE_LABEL } from '../../constants/roles';
-import ErrorBoundary from '../ErrorBoundary';
-import Page from '../Page';
 import ActionButtons from '../ActionButtons';
-import RoleBar from '../RoleBar';
-import Section from '../Section';
-import RoleContent from '../RoleContent';
 import Character from '../Character';
 import Whale from '../Characters/Whale';
+import ErrorBoundary from '../ErrorBoundary';
+import Page from '../Page';
+import RoleBar from '../RoleBar';
+import RoleContent from '../RoleContent';
+import Section from '../Section';
 import QuoteBubble from './QuoteBubble';
 
 function DevOpsRolePage() {

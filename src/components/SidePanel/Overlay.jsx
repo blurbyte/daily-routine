@@ -1,9 +1,8 @@
-import React from 'react';
+import { animated, useTransition } from '@react-spring/web';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { useTransition, animated } from 'react-spring';
 
-import { zIndexModalOverlay, colorBlack } from '../../styles/designTokens';
+import { colorBlack, zIndexModalOverlay } from '../../styles/designTokens';
 
 const Wrapper = styled(animated.div)`
   height: 100%;
@@ -16,7 +15,7 @@ const Wrapper = styled(animated.div)`
 `;
 
 function Overlay({ isVisible, onClick }) {
-  const transitions = useTransition(isVisible, null, {
+  const transitions = useTransition(isVisible, {
     from: { opacity: 0 },
     enter: { opacity: 0.6 },
     leave: { opacity: 0 },
@@ -27,7 +26,7 @@ function Overlay({ isVisible, onClick }) {
     }
   });
 
-  return transitions.map(({ item, props, key }) => item && <Wrapper key={key} style={props} onClick={onClick} />);
+  return transitions((style, item) => item && <Wrapper style={style} onClick={onClick} />);
 }
 
 Overlay.prototype = {

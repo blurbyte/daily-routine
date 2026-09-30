@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { fontMedium, colorOpaqueBlack, colorPink, fontWeightNormal, borderRadius } from '../../styles/designTokens';
+import { borderRadius, colorOpaqueBlack, colorPink, fontMedium, fontWeightNormal } from '../../styles/designTokens';
 
 const Hitbox = styled.a`
   display: flex;

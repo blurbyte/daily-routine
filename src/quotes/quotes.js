@@ -1,5 +1,5 @@
-import { FRONT_END_ROLE, BACK_END_ROLE, DEV_OPS_ROLE } from '../constants/roles';
 import { BRAG, CONFESS } from '../constants/roleActions';
+import { BACK_END_ROLE, DEV_OPS_ROLE, FRONT_END_ROLE } from '../constants/roles';
 
 export const PAST = 'past';
 export const FUTURE = 'future';

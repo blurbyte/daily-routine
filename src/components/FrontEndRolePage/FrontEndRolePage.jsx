@@ -1,15 +1,13 @@
-import React from 'react';
-
 import { FRONT_END_ROLE, FRONT_END_ROLE_LABEL } from '../../constants/roles';
+import ActionButtons from '../ActionButtons';
+import Character from '../Character';
+import Fox from '../Characters/Fox';
 import ErrorBoundary from '../ErrorBoundary';
 import Page from '../Page';
-import RoleBar from '../RoleBar';
-import ActionButtons from '../ActionButtons';
-import Section from '../Section';
-import RoleContent from '../RoleContent';
-import Fox from '../Characters/Fox';
 import QuoteBubble from '../QuoteBubble';
-import Character from '../Character';
+import RoleBar from '../RoleBar';
+import RoleContent from '../RoleContent';
+import Section from '../Section';
 
 function FrontEndRolePage() {
   return (

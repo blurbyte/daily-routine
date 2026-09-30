@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useSpring } from '@react-spring/web';
+import { useState } from 'react';
 import styled from 'styled-components';
-import { useSpring } from 'react-spring';
 
-import { colorRed, colorOpaqueBlack } from '../../styles/designTokens';
-import { Heart, BuilditLogo } from '../Icons';
+import { colorOpaqueBlack, colorRed } from '../../styles/designTokens';
+import { BuilditLogo, Heart } from '../Icons';
 import Hitbox from './Hitbox';
 
 const Link = styled(Hitbox).attrs({
@@ -28,8 +28,8 @@ function CraftedWithLove() {
   });
 
   const iconAnimation = {
-    color: x.interpolate({ range: [0, 0.25, 1], output: [colorOpaqueBlack, colorRed, colorRed] }),
-    transform: x.interpolate({ range: [0, 0.5, 1], output: [1, 2.2, 1] }).interpolate(x => `scale(${x})`)
+    color: x.to({ range: [0, 0.25, 1], output: [colorOpaqueBlack, colorRed, colorRed] }),
+    transform: x.to({ range: [0, 0.5, 1], output: [1, 2.2, 1] }).to(x => `scale(${x})`)
   };
 
   return (

@@ -1,8 +1,8 @@
 // Blocks scrolling on page
 // Most of time state of component such as isVisible, isAnimating should be passed
 
+import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useLayoutEffect } from 'react';
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 function useLockBodyScroll(shouldLock = false) {
   useLayoutEffect(() => {

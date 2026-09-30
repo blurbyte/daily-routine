@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import media from '../../styles/media';
 import { spacingMedium } from '../../styles/designTokens';
+import media from '../../styles/media';
 
 const Header = styled.header`
   display: grid;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 function BuilditLogo() {
   return (
     <svg

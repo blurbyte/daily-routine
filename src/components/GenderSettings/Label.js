@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { borderWidthThick, colorWhite, borderRadius } from '../../styles/designTokens';
+import { borderRadius, borderWidthThick, colorWhite } from '../../styles/designTokens';
 
 const Label = styled.label`
   position: relative;
@@ -19,12 +19,12 @@ const Label = styled.label`
   -ms-user-select: none;
   user-select: none;
 
-  :first-child {
+  &:first-child {
     border-radius: ${borderRadius} 0 0 ${borderRadius};
     border-left: ${borderWidthThick} solid ${({ theme }) => theme.secondaryColor};
   }
 
-  :last-child {
+  &:last-child {
     border-radius: 0 ${borderRadius} ${borderRadius} 0;
   }
 

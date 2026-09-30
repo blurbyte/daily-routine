@@ -1,9 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import { animated, useTransition } from '@react-spring/web';
 import PropTypes from 'prop-types';
-import { animated, useTransition } from 'react-spring';
+import styled from 'styled-components';
 
-import { zIndexModal, colorWhite } from '../../styles/designTokens';
+import { colorWhite, zIndexModal } from '../../styles/designTokens';
 
 const Wrapper = styled(animated.section)`
   height: 100%;
@@ -16,7 +15,7 @@ const Wrapper = styled(animated.section)`
 `;
 
 function Panel({ isVisible, children }) {
-  const transitions = useTransition(isVisible, null, {
+  const transitions = useTransition(isVisible, {
     from: {
       transform: 'translateX(26rem)'
     },
@@ -33,10 +32,10 @@ function Panel({ isVisible, children }) {
     }
   });
 
-  return transitions.map(
-    ({ item, props, key }) =>
+  return transitions(
+    (style, item) =>
       item && (
-        <Wrapper data-testid="side-panel" key={key} style={props}>
+        <Wrapper data-testid="side-panel" style={style}>
           {children}
         </Wrapper>
       )

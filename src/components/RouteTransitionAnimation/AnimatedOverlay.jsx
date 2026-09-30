@@ -1,10 +1,9 @@
-import React from 'react';
+import { animated, useSpring } from '@react-spring/web';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
-import { animated, useSpring } from 'react-spring';
 
-import { theme } from '../../types';
 import { colorWhite, zIndexModalOverlay } from '../../styles/designTokens';
+import { theme } from '../../types';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -47,6 +46,13 @@ const ThickBar = styled(animated.div)`
   transform: translateY(0);
 `;
 
+// Defined outside of the component on purpose
+// New function passed on re-render would restart the animation and call `onRest` too early
+async function coverAndRevealScreen(next) {
+  await next({ transform: 'scaleY(1)' });
+  await next({ transform: 'scaleY(0)' });
+}
+
 function AnimatedOverlay({ onFinished, theme }) {
   const { primaryColor } = theme;
 
@@ -54,10 +60,7 @@ function AnimatedOverlay({ onFinished, theme }) {
     from: {
       transform: 'scaleY(0)'
     },
-    to: async next => {
-      await next({ transform: 'scaleY(1)' });
-      await next({ transform: 'scaleY(0)' });
-    },
+    to: coverAndRevealScreen,
     config: { mass: 2, tension: 160, friction: 22, precision: 0.1, clamp: true },
     onRest: onFinished
   });

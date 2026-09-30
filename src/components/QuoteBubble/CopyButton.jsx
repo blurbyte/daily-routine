@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-import { CopyCards } from '../Icons';
 import Hitbox from '../Hitbox';
+import { CopyCards } from '../Icons';
 import CopyNotification from './CopyNotification';
 
 function CopyButton({ valueToCopy }) {

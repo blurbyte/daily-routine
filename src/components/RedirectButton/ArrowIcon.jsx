@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 
-import media from '../../styles/media';
 import { zIndexDefault } from '../../styles/designTokens';
+import media from '../../styles/media';
 import { LongArrow } from '../Icons';
 
 const Wrapper = styled.span`

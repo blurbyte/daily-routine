@@ -1,8 +1,7 @@
-import React from 'react';
 import { create } from 'react-test-renderer';
 
-import RoleBar from '../RoleBar';
 import { FRONT_END_ROLE_LABEL } from '../../../constants/roles';
+import RoleBar from '../RoleBar';
 
 jest.mock('../../Icons/Gear', () => 'GearIcon');
 

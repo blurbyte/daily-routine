@@ -1,9 +1,8 @@
-import React from 'react';
+import { animated } from '@react-spring/web';
 import styled from 'styled-components';
-import { animated } from 'react-spring';
 
-import media from '../../styles/media';
 import { zIndexDefault } from '../../styles/designTokens';
+import media from '../../styles/media';
 import { SaltGrinder } from '../Icons';
 
 const Wrapper = styled.span`

@@ -1,8 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Gear } from '../Icons';
 import Hitbox from '../Hitbox';
+import { Gear } from '../Icons';
 
 function GearButton({ onClick }) {
   return (

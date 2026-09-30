@@ -3,7 +3,6 @@ import '../../styles/sanitize.css';
 // Apply focus styles only when navigating with keyboard
 import 'focus-visible/dist/focus-visible';
 
-import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from '../App';

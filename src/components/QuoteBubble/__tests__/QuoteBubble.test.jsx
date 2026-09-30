@@ -1,8 +1,7 @@
 // TODO Figure out how to test it a bit more in depth @blurbyte
 
-import React from 'react';
-import { create } from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
+import { create } from 'react-test-renderer';
 
 import { QuoteContext } from '../../../context/QuoteContext';
 import QuoteBubble from '../QuoteBubble';

@@ -1,8 +1,7 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 
-import { RouteTransitionAnimationProvider, RouteTransitionAnimationContext } from '../RouteTransitionAnimationContext';
 import { ROOT_PATH } from '../../constants/routes';
+import { RouteTransitionAnimationContext, RouteTransitionAnimationProvider } from '../RouteTransitionAnimationContext';
 
 describe('COMPONENT - RouteTransitionAnimationProvider', () => {
   const history = {

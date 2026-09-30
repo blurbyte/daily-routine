@@ -1,9 +1,8 @@
-import React from 'react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { create } from 'react-test-renderer';
-import { render, fireEvent, cleanup } from '@testing-library/react';
 
-import DesktopShare from '../DesktopShare';
 import { FACEBOOK, TWITTER } from '../../../constants/socialMedia';
+import DesktopShare from '../DesktopShare';
 
 afterEach(cleanup);
 

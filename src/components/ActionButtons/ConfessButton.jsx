@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import styled from 'styled-components';
 
-import { role } from '../../types';
 import { CONFESS } from '../../constants/roleActions';
-import { colorRed, colorDarkRed } from '../../styles/designTokens';
-import SaltGrinderIcon from './SaltGrinderIcon';
+import { colorDarkRed, colorRed } from '../../styles/designTokens';
+import { role } from '../../types';
 import ButtonBase from './ButtonBase';
+import SaltGrinderIcon from './SaltGrinderIcon';
 
 const StyledButton = styled(ButtonBase)`
   background-color: ${colorRed};

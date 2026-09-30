@@ -1,14 +1,12 @@
-import React from 'react';
-
 import { ROOT_PATH } from '../../constants/routes';
-import ErrorBoundary from '../ErrorBoundary';
-import Section from '../Section';
-import Headline from '../Headline';
-import Subheadline from '../Subheadline';
+import { SugarCat } from '../Characters';
 import Content from '../Content';
+import ErrorBoundary from '../ErrorBoundary';
+import Headline from '../Headline';
 import Navigation from '../Navigation';
 import RedirectButton from '../RedirectButton';
-import { SugarCat } from '../Characters';
+import Section from '../Section';
+import Subheadline from '../Subheadline';
 import Page from './Page';
 import Wrapper from './Wrapper';
 

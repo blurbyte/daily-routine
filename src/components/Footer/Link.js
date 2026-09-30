@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import media from '../../styles/media';
 import { colorOpaqueBlack, fontWeightBold } from '../../styles/designTokens';
+import media from '../../styles/media';
 import Hitbox from './Hitbox';
 
 const Link = styled(Hitbox).attrs({

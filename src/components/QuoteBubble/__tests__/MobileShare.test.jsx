@@ -1,6 +1,5 @@
-import React from 'react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { create } from 'react-test-renderer';
-import { render, fireEvent, cleanup } from '@testing-library/react';
 
 import MobileShare from '../MobileShare';
 

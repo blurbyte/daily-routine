@@ -1,14 +1,13 @@
-import React from 'react';
-import { render, cleanup, act } from '@testing-library/react';
+import { act, cleanup, render } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 
-import CharacterWitQuote from '../Character';
-import { GenderContext } from '../../../context/GenderContext';
 import { MALE } from '../../../constants/genders';
+import { GenderContext } from '../../../context/GenderContext';
+import { QuoteContext } from '../../../context/QuoteContext';
 import { pose } from '../../../types';
 import { extractPose } from '../../../utils/extractFromPath';
-import { QuoteContext } from '../../../context/QuoteContext';
+import CharacterWitQuote from '../Character';
 
 jest.mock('../../../utils/extractFromPath');
 

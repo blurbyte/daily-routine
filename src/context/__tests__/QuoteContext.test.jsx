@@ -1,7 +1,6 @@
-import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 
-import { QuoteProvider, QuoteContext } from '../QuoteContext';
+import { QuoteContext, QuoteProvider } from '../QuoteContext';
 
 function renderQuoteContextConsumer(quote, handleQuoteChange) {
   return (

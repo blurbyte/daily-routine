@@ -1,6 +1,5 @@
-import React from 'react';
+import { animated, useSpring } from '@react-spring/web';
 import styled from 'styled-components';
-import { useSpring, animated } from 'react-spring';
 
 import { zIndexArtworkSecondaryDecor } from '../../../styles/designTokens';
 

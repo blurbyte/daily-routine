@@ -1,9 +1,9 @@
-import unzip from 'lodash.unzip';
-import isEmpty from 'lodash.isempty';
 import includes from 'lodash.includes';
+import isEmpty from 'lodash.isempty';
+import unzip from 'lodash.unzip';
 
 import { convertToDigits, convertToNickname } from './encode';
-import { PHRASES, PREFIX, ROLES, PAST, FUTURE } from './quotes';
+import { FUTURE, PAST, PHRASES, PREFIX, ROLES } from './quotes';
 
 export function getQuoteFromID(role, action, quoteID) {
   if (typeof quoteID != 'string') {

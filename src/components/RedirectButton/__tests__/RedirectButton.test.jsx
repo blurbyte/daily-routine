@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';

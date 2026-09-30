@@ -1,16 +1,15 @@
-import React from 'react';
 import styled from 'styled-components';
 
-import { pose } from '../../../types';
 import { DEFAULT } from '../../../constants/roleActions';
-import Head from './Head';
-import Neck from './Neck';
+import { pose } from '../../../types';
 import Chest from './Chest';
-import Shadow from './Shadow';
-import RighArm from './RightArm';
+import Head from './Head';
 import LeftArm from './LeftArm';
-import RightLeg from './RightLeg';
 import LeftLeg from './LeftLeg';
+import Neck from './Neck';
+import RighArm from './RightArm';
+import RightLeg from './RightLeg';
+import Shadow from './Shadow';
 
 const Frame = styled.div`
   position: relative;

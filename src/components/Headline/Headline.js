@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
+import { fontXLarge, spacingSmall } from '../../styles/designTokens';
 import media from '../../styles/media';
-import { spacingSmall, fontXLarge } from '../../styles/designTokens';
 
 const Headline = styled.h1`
   font-size: ${fontXLarge};

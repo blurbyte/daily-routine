@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
+import { spacingMedium, spacingSmall } from '../../styles/designTokens';
 import media from '../../styles/media';
-import { spacingSmall, spacingMedium } from '../../styles/designTokens';
 import ContentBase from '../Content';
 
 const Content = styled(ContentBase)`

@@ -1,13 +1,12 @@
-import { FRONT_END_ROLE, BACK_END_ROLE, DEV_OPS_ROLE } from '../constants/roles';
-
+import { BACK_END_ROLE, DEV_OPS_ROLE, FRONT_END_ROLE } from '../constants/roles';
 import {
   colorBlue,
   colorLightBlue,
-  colorPurple,
   colorLightPurple,
-  colorYellow,
+  colorLightTeal,
   colorLightYellow,
-  colorLightTeal
+  colorPurple,
+  colorYellow
 } from '../styles/designTokens';
 
 function generateColors(colourVariant) {

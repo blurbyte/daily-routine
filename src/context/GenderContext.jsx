@@ -1,5 +1,5 @@
-import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
+import { createContext } from 'react';
 
 import { MALE } from '../constants/genders';
 import useLocalStorage from '../hooks/useLocalStorage';

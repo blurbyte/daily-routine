@@ -1,11 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import { FACEBOOK, TWITTER } from '../../constants/socialMedia';
 import CopyButton from './CopyButton';
-import MobileShare from './MobileShare';
 import DesktopShare from './DesktopShare';
+import MobileShare from './MobileShare';
 
 const Wrapper = styled.div`
   display: flex;

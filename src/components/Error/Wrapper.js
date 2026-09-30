@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 import {
-  colorRed,
+  borderRadius,
+  borderWidthThick,
   colorBlack,
+  colorRed,
+  colorWhite,
   fontMedium,
   fontWeightBold,
-  spacingSmall,
-  borderWidthThick,
-  colorWhite,
-  borderRadius
+  spacingSmall
 } from '../../styles/designTokens';
 
 const Wrapper = styled.div`

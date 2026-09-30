@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 
-import { colorYellow, colorDarkYellow } from '../../styles/designTokens';
 import { FRONT_END_ROLE, FRONT_END_ROLE_LABEL } from '../../constants/roles';
+import { colorDarkYellow, colorYellow } from '../../styles/designTokens';
 import RedirectButton from '../RedirectButton';
 
 const StyledButton = styled(RedirectButton)`

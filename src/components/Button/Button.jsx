@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useSpring } from '@react-spring/web';
 import PropTypes from 'prop-types';
-import { useSpring } from 'react-spring';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import StyledButton from './StyledButton';
 import Text from './Text';

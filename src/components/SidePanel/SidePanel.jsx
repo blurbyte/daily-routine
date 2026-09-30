@@ -1,10 +1,9 @@
 // Simple, modal-like side panel with overlay
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
-import Panel from './Panel';
 import Overlay from './Overlay';
+import Panel from './Panel';
 
 function SidePanel({ isVisible, children, onOverlayClick }) {
   return (

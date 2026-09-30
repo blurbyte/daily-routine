@@ -1,11 +1,10 @@
-import React from 'react';
 import styled from 'styled-components';
 
-import CraftedWithLove from './CraftedWithLove';
 import Content from './Content';
-import Wrapper from './Wrapper';
-import Link from './Link';
+import CraftedWithLove from './CraftedWithLove';
 import Hitbox from './Hitbox';
+import Link from './Link';
+import Wrapper from './Wrapper';
 
 const Text = styled(Hitbox)`
   margin: 0 0.4rem;

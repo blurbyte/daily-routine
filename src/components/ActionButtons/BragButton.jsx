@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import styled from 'styled-components';
 
-import { role } from '../../types';
 import { BRAG } from '../../constants/roleActions';
-import { colorGreen, colorDarkGreen } from '../../styles/designTokens';
-import LightbulbIcon from './LightbulbIcon';
+import { colorDarkGreen, colorGreen } from '../../styles/designTokens';
+import { role } from '../../types';
 import ButtonBase from './ButtonBase';
+import LightbulbIcon from './LightbulbIcon';
 
 const StyledButton = styled(ButtonBase)`
   background-color: ${colorGreen};

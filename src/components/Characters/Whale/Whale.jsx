@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
-import { DEFAULT, CONFESS } from '../../../constants/roleActions';
 import { FEMALE } from '../../../constants/genders';
-import { pose } from '../../../types';
+import { CONFESS, DEFAULT } from '../../../constants/roleActions';
 import { GenderContext } from '../../../context/GenderContext';
-import FloatingAnimationWrapper from './FloatingAnimationWrapper';
-import WhaleArtwork from './WhaleArtwork';
+import { pose } from '../../../types';
 import AnimatedWhaleShadow from './AnimatedWhaleShadow';
 import ConfusionMarks from './ConfusionMarks';
+import FloatingAnimationWrapper from './FloatingAnimationWrapper';
 import GenderFlower from './GenderFlower';
 import Tear from './Tear';
+import WhaleArtwork from './WhaleArtwork';
 
 function Whale({ pose = DEFAULT }) {
   const { gender } = useContext(GenderContext);

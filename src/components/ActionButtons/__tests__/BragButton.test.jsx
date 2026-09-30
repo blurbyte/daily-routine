@@ -1,6 +1,5 @@
-import React from 'react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { render, fireEvent, cleanup } from '@testing-library/react';
 
 import { FRONT_END_ROLE } from '../../../constants/roles';
 import BragButton from '../BragButton';

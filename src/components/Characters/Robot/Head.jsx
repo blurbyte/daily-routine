@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import { pose } from '../../../types';
-import { GenderContext } from '../../../context/GenderContext';
-import { DEFAULT, BRAG, CONFESS } from '../../../constants/roleActions';
-import { zIndexArtworkPart } from '../../../styles/designTokens';
 import { FEMALE } from '../../../constants/genders';
+import { BRAG, CONFESS, DEFAULT } from '../../../constants/roleActions';
+import { GenderContext } from '../../../context/GenderContext';
+import { zIndexArtworkPart } from '../../../styles/designTokens';
+import { pose } from '../../../types';
 import GenderFlower from './GenderFlower';
 
 const headAnimation = keyframes`

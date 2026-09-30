@@ -1,4 +1,5 @@
-package.json
+dist
+coverage
 package-lock.json
-.circleci
+*.md
 src/styles/sanitize.css

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colorDarkPink, borderRadius } from '../../styles/designTokens';
+import { borderRadius, colorDarkPink } from '../../styles/designTokens';
 
 const Wrapper = styled.div`
   display: flex;

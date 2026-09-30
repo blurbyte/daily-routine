@@ -1,9 +1,8 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // React 16.9 has no `react/jsx-runtime`, so stick to the classic JSX transform
-  plugins: [react({ jsxRuntime: 'classic' })],
+  plugins: [react()],
   server: {
     port: 3000
   },

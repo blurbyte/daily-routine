@@ -1,9 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { spacingMedium } from '../../styles/designTokens';
 import { QuoteProvider } from '../../context/QuoteContext';
+import { spacingMedium } from '../../styles/designTokens';
 
 const Wrapper = styled.div`
   max-width: 48rem;

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 
 import { RouteTransitionAnimationContext } from '../../context/RouteTransitionAnimationContext';
 import Button from '../Button';

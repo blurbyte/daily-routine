@@ -1,17 +1,14 @@
 // Brag and Confess buttons for specified role
 
-import React from 'react';
-
 import { BRAG, CONFESS } from '../../constants/roleActions';
 import { role } from '../../types';
-
 import { getRandomQuoteID } from '../../utils/quotesService';
+import Content from '../Content';
 import ErrorBoundary from '../ErrorBoundary';
 import Navigation from '../Navigation';
-import Content from '../Content';
-import Wrapper from './Wrapper';
 import BragButton from './BragButton';
 import ConfessButton from './ConfessButton';
+import Wrapper from './Wrapper';
 
 function ActionButtons({ role }) {
   const bragQuoteID = getRandomQuoteID(role, BRAG);

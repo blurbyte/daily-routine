@@ -1,9 +1,7 @@
-import React from 'react';
-
-import { socialMediaVariant } from '../../types';
-import { Facebook, Twitter } from '../Icons';
-import Hitbox from '../Hitbox';
 import { FACEBOOK, TWITTER } from '../../constants/socialMedia';
+import { socialMediaVariant } from '../../types';
+import Hitbox from '../Hitbox';
+import { Facebook, Twitter } from '../Icons';
 
 const socialMediaData = {
   [FACEBOOK]: {

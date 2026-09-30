@@ -1,14 +1,12 @@
-import React from 'react';
-
 import { BACK_END_ROLE, BACK_END_ROLE_LABEL } from '../../constants/roles';
-import ErrorBoundary from '../ErrorBoundary';
-import Page from '../Page';
 import ActionButtons from '../ActionButtons';
-import RoleBar from '../RoleBar';
-import Section from '../Section';
-import RoleContent from '../RoleContent';
 import Character from '../Character';
 import Robot from '../Characters/Robot';
+import ErrorBoundary from '../ErrorBoundary';
+import Page from '../Page';
+import RoleBar from '../RoleBar';
+import RoleContent from '../RoleContent';
+import Section from '../Section';
 import QuoteBubble from './QuoteBubble';
 
 function BackEndRolePage() {

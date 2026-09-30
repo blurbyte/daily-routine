@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 import { RouteTransitionAnimationContext } from '../../context/RouteTransitionAnimationContext';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';

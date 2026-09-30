@@ -1,15 +1,14 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import FocusLock from 'react-focus-lock';
 
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
+import ErrorBoundary from '../ErrorBoundary';
+import GenderSettings from '../GenderSettings';
 import SidePanel from '../SidePanel';
 import Subheadline from '../Subheadline';
-import GenderSettings from '../GenderSettings';
-import ErrorBoundary from '../ErrorBoundary';
-import Header from './Header';
 import CloseButton from './CloseButton';
 import Form from './Form';
+import Header from './Header';
 
 function SettingsPanel({ isVisible, onClose }) {
   useLockBodyScroll(isVisible);

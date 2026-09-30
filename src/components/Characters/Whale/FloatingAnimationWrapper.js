@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
-import media from '../../../styles/media';
 import { spacingLarge } from '../../../styles/designTokens';
+import media from '../../../styles/media';
 
 const floatingAnimation = keyframes`
 	0% { transform: translateY(0); }

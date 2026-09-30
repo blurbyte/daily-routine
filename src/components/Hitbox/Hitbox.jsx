@@ -1,11 +1,12 @@
 // Button wrapper with all styles removed
 // Useful for accessible action icons / target areas
 
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { colorPink, colorDarkPink, borderRadius } from '../../styles/designTokens';
+import { borderRadius, colorDarkPink, colorPink } from '../../styles/designTokens';
 
-const Hitbox = styled.button`
+const Styled = styled.button`
   position: relative;
   border: 0;
   margin: 0;
@@ -22,8 +23,16 @@ const Hitbox = styled.button`
   border-radius: ${borderRadius};
 
   &.focus-visible {
-    background-color: ${props => (props.alternativeFocusStyle ? colorDarkPink : colorPink)};
+    background-color: ${props => (props.$alternativeFocusStyle ? colorDarkPink : colorPink)};
   }
 `;
+
+function Hitbox({ alternativeFocusStyle, ...props }) {
+  return <Styled $alternativeFocusStyle={alternativeFocusStyle} {...props} />;
+}
+
+Hitbox.propTypes = {
+  alternativeFocusStyle: PropTypes.bool
+};
 
 export default Hitbox;

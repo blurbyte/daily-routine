@@ -1,7 +1,5 @@
-import React from 'react';
-import { Share } from '../Icons';
-
 import Hitbox from '../Hitbox';
+import { Share } from '../Icons';
 
 function MobileShare() {
   const share = () => {

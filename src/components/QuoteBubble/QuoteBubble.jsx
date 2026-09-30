@@ -1,32 +1,36 @@
-import React, { useContext } from 'react';
-import { useTransition } from 'react-spring';
+import { useTransition } from '@react-spring/web';
+import PropTypes from 'prop-types';
+import { useContext, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { location } from '../../types';
-import { THOUGHT, SPEECH } from '../../constants/speechBubbleVariant';
-import { colorWhite } from '../../styles/designTokens';
+import { SPEECH, THOUGHT } from '../../constants/speechBubbleVariant';
 import { QuoteContext } from '../../context/QuoteContext';
+import { colorWhite } from '../../styles/designTokens';
+import { location } from '../../types';
 import ErrorBoundary from '../ErrorBoundary';
+import Bubble from './Bubble';
+import BubbleButtons from './BubbleButtons';
+import BubbleTail from './BubbleTail';
+import Quote from './Quote';
 import trimQuote from './trimQuote';
 import useBubble from './useBubble';
 import Wrapper from './Wrapper';
-import Bubble from './Bubble';
-import Quote from './Quote';
-import BubbleTail from './BubbleTail';
-import BubbleButtons from './BubbleButtons';
 
 const ERROR_MESSAGE =
   ' – The blockchain distributed ledger failed to achieve quorum with deep learning neural network of your pseudo-generated Turning complaisant daily message.';
 
-function QuoteBubble({ location, ...props }) {
+function QuoteBubble({ location, className }) {
   const { pathname } = location;
   const { handleQuoteChange } = useContext(QuoteContext);
 
   const bubble = useBubble(pathname);
   // Puts quote into context
-  handleQuoteChange(bubble.quote);
+  useEffect(() => {
+    handleQuoteChange(bubble.quote);
+  }, [bubble.quote, handleQuoteChange]);
 
-  const transitions = useTransition(bubble, bubble => bubble.quoteID, {
+  const transitions = useTransition(bubble, {
+    keys: bubble => bubble.quoteID,
     from: { opacity: 0, transform: 'perspective(600px) rotateX(45deg) translateY(-20px) scale(0.8)' },
     enter: { opacity: 1, transform: 'perspective(600px) rotateX(0deg) translateY(0) scaleY(1)' },
     leave: {
@@ -44,11 +48,11 @@ function QuoteBubble({ location, ...props }) {
 
   return (
     <ErrorBoundary>
-      <Wrapper {...props}>
-        {transitions.map(
-          ({ item, props, key }) =>
+      <Wrapper className={className}>
+        {transitions(
+          (style, item) =>
             item && (
-              <Bubble key={key} style={props}>
+              <Bubble style={style}>
                 {item.quote ? (
                   <Quote>{trimQuote(item.quote)}</Quote>
                 ) : (
@@ -69,7 +73,8 @@ function QuoteBubble({ location, ...props }) {
 }
 
 QuoteBubble.propTypes = {
-  location: location.isRequired
+  location: location.isRequired,
+  className: PropTypes.string
 };
 
 export default withRouter(QuoteBubble);

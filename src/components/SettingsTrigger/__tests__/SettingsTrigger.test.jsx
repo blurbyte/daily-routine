@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 
 import { GenderProvider } from '../../../context/GenderContext';
 import SettingsTrigger from '../SettingsTrigger';

@@ -1,5 +1,5 @@
-import { DEFAULT, BRAG, CONFESS } from '../../constants/roleActions';
-import { extractRole, extractQuoteID, extractAction, extractPose } from '../extractFromPath';
+import { BRAG, CONFESS, DEFAULT } from '../../constants/roleActions';
+import { extractAction, extractPose, extractQuoteID, extractRole } from '../extractFromPath';
 
 const EXAMPLE_QUOTE_ID = 'elatedWhale';
 const EXAMPLE_ACTION = 'brag';

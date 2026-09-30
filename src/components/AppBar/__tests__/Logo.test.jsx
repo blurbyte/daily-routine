@@ -1,10 +1,9 @@
-import React from 'react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { render, cleanup, fireEvent } from '@testing-library/react';
 
-import Logo from '../Logo';
-import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
 import { ROOT_PATH } from '../../../constants/routes';
+import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
+import Logo from '../Logo';
 
 afterEach(cleanup);
 const animateAndRedirect = jest.fn();

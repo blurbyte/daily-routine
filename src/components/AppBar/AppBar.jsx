@@ -1,7 +1,5 @@
-import React from 'react';
-
-import Wrapper from './Wrapper';
 import Logo from './Logo';
+import Wrapper from './Wrapper';
 
 function AppBar() {
   return (

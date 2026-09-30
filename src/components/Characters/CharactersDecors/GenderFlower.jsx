@@ -1,7 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import { animated, useTransition } from '@react-spring/web';
 import PropTypes from 'prop-types';
-import { animated, useTransition } from 'react-spring';
+import styled from 'styled-components';
 
 import { zIndexArtworkMainDecor } from './../../../styles/designTokens';
 
@@ -13,17 +12,17 @@ const Wrapper = styled(animated.span)`
 `;
 
 function GenderFlower({ isVisible, className }) {
-  const transitions = useTransition(isVisible, null, {
+  const transitions = useTransition(isVisible, {
     from: { opacity: 0, transform: 'scale(0) rotate(-180deg)' },
     enter: { opacity: 1, transform: 'scale(1) rotate(0)' },
     leave: { opacity: 0, transform: 'scale(0) rotate(-180deg)' },
     config: { mass: 1, tension: 160, friction: 8, delay: 200 }
   });
 
-  return transitions.map(({ item, key, props }) => {
+  return transitions((style, item) => {
     return (
       item && (
-        <Wrapper key={key} style={props} className={className}>
+        <Wrapper style={style} className={className}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="45"

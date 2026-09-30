@@ -1,7 +1,5 @@
-import React from 'react';
-
-import { speechBubbleVariant } from '../../types';
 import { SPEECH, THOUGHT } from '../../constants/speechBubbleVariant';
+import { speechBubbleVariant } from '../../types';
 
 function BubbleTailArtwork({ variant = SPEECH, ...props }) {
   return (

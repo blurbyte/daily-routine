@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
-import { DEFAULT, CONFESS } from '../../../constants/roleActions';
 import { FEMALE } from '../../../constants/genders';
-import { pose } from '../../../types';
+import { CONFESS, DEFAULT } from '../../../constants/roleActions';
 import { GenderContext } from '../../../context/GenderContext';
-import Wrapper from './Wrapper';
-import Frame from './Frame';
-import FoxArtwork from './FoxArtwork';
+import { pose } from '../../../types';
 import ConfusionMarks from './ConfusionMarks';
+import FoxArtwork from './FoxArtwork';
+import Frame from './Frame';
 import GenderFlower from './GenderFlower';
-import Tear from './Tear';
 import Tail from './Tail';
+import Tear from './Tear';
+import Wrapper from './Wrapper';
 
 function Fox({ pose = DEFAULT }) {
   const { gender } = useContext(GenderContext);

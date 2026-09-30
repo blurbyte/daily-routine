@@ -1,7 +1,5 @@
-import React from 'react';
-
+import { BRAG, CONFESS, DEFAULT } from '../../../constants/roleActions';
 import { pose } from '../../../types';
-import { DEFAULT, BRAG, CONFESS } from '../../../constants/roleActions';
 
 function FoxArtwork({ pose = DEFAULT }) {
   return (

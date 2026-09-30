@@ -1,9 +1,6 @@
-import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { ROOT_PATH } from '../../../constants/routes';
-import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
 import {
   BACK_END_ROLE,
   BACK_END_ROLE_LABEL,
@@ -12,6 +9,8 @@ import {
   FRONT_END_ROLE,
   FRONT_END_ROLE_LABEL
 } from '../../../constants/roles';
+import { ROOT_PATH } from '../../../constants/routes';
+import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
 import RoleButtons from '../RoleButtons';
 
 describe('COMPONENT - RoleButtons', () => {

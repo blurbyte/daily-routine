@@ -1,7 +1,7 @@
-import React from 'react';
+import { animated, useTransition } from '@react-spring/web';
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import styled from 'styled-components';
-import { useTransition, animated } from 'react-spring';
 
 import { zIndexArtworkPart } from '../../styles/designTokens';
 import { CopyIndicator } from '../Icons';
@@ -15,7 +15,7 @@ const Wrapper = styled(animated.div)`
 `;
 
 function CopyNotification({ isVisible, onFinished }) {
-  const transitions = useTransition(isVisible, null, {
+  const transitions = useTransition(isVisible, {
     from: { opacity: 1, transform: 'translateY(0px) scale(1)' },
     enter: { opacity: 1, transform: 'translateY(0px) scale(1)' },
     leave: {
@@ -25,14 +25,20 @@ function CopyNotification({ isVisible, onFinished }) {
     config: {
       tension: 180,
       friction: 36
-    },
-    onRest: onFinished
+    }
   });
 
-  return transitions.map(
-    ({ item, props, key }) =>
+  // Entering is instant (nothing to animate), so start leaving right after notification shows up
+  useEffect(() => {
+    if (isVisible) {
+      onFinished();
+    }
+  }, [isVisible, onFinished]);
+
+  return transitions(
+    (style, item) =>
       item && (
-        <Wrapper data-testid="copy-notification" key={key} style={props}>
+        <Wrapper data-testid="copy-notification" style={style}>
           <CopyIndicator />
         </Wrapper>
       )

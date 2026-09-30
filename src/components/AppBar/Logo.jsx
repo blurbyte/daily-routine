@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
-import { Link as LinkBase } from 'react-router-dom';
+import { useContext } from 'react';
 import { withRouter } from 'react-router';
+import { Link as LinkBase } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { ROOT_PATH } from '../../constants/routes';
+import { RouteTransitionAnimationContext } from '../../context/RouteTransitionAnimationContext';
+import { borderRadius, borderWidthThin, colorBlack, colorPink, spacingSmall } from '../../styles/designTokens';
 import media from '../../styles/media';
 import { location } from '../../types';
-import { RouteTransitionAnimationContext } from '../../context/RouteTransitionAnimationContext';
-import { colorBlack, colorPink, spacingSmall, borderWidthThin, borderRadius } from '../../styles/designTokens';
-import { ROOT_PATH } from '../../constants/routes';
 import { Logo as LogoIcon } from '../Icons';
 
 const Link = styled(LinkBase)`

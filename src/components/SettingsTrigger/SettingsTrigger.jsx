@@ -1,6 +1,6 @@
 // Settings trigger with side panel
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import SettingsPanel from '../SettingsPanel';
 import GearButton from './GearButton';

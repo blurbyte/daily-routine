@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
+import { fontLarge, fontWeightNormal, spacingSmall } from '../../styles/designTokens';
 import media from '../../styles/media';
-import { spacingSmall, fontWeightNormal, fontLarge } from '../../styles/designTokens';
 
 const Subheadline = styled.h2`
   font-size: ${fontLarge};

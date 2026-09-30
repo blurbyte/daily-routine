@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
-import media from '../../styles/media';
 import { zIndexDefault } from '../../styles/designTokens';
+import media from '../../styles/media';
 import BubbleTailArtwork from './BubbleTailArtwork';
 
 const fadeInAnimation = keyframes`

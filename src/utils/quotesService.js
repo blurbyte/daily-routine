@@ -1,4 +1,4 @@
-import { getRandomQuoteID as generateQuoteID, getQuoteFromID } from '../quotes/generate.js';
+import { getQuoteFromID, getRandomQuoteID as generateQuoteID } from '../quotes/generate.js';
 
 export const DEFAULT_QUOTE = "Daily in 5 minutes and I'm still not sure what to say...";
 

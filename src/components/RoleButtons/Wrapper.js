@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import media from '../../styles/media';
 import { colorWhite } from '../../styles/designTokens';
+import media from '../../styles/media';
 import Section from '../Section';
 
 const Wrapper = styled(Section)`

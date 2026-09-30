@@ -1,9 +1,8 @@
-import React from 'react';
 import { create } from 'react-test-renderer';
 
+import { FEMALE, MALE } from '../../../../constants/genders';
 import { DEFAULT } from '../../../../constants/roleActions';
 import { GenderContext } from '../../../../context/GenderContext';
-import { MALE, FEMALE } from '../../../../constants/genders';
 import Whale from '../Whale';
 
 jest.mock('../../../../context/GenderContext');

@@ -1,7 +1,7 @@
 // Sets page title and lay out page content and buttons
 
-import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 
 import Wrapper from './Wrapper';
 

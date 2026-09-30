@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import media from '../../styles/media';
 import { spacingLarge } from '../../styles/designTokens';
+import media from '../../styles/media';
 
 const CharacterWrapper = styled.div`
   padding: 0;

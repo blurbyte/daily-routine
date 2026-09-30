@@ -1,17 +1,17 @@
+import { animated } from '@react-spring/web';
 import styled from 'styled-components';
-import { animated } from 'react-spring';
 
-import media from '../../styles/media';
 import {
-  colorWhite,
-  colorGreen,
+  borderRadius,
   colorDarkGreen,
   colorDarkPink,
+  colorGreen,
+  colorWhite,
   fontLarge,
   fontWeightBold,
-  borderRadius,
   spacingMedium
 } from '../../styles/designTokens';
+import media from '../../styles/media';
 
 const StyledButton = styled.button`
   position: relative;

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { to, useSpring } from '@react-spring/web';
 import PropTypes from 'prop-types';
-import { useSpring, interpolate } from 'react-spring';
+import { useState } from 'react';
 
 import Button from '../Button';
 
@@ -20,11 +20,8 @@ function ButtonBase({ icon: Icon, onClick = () => {}, children, ...props }) {
   const iconShakingAnimation = {
     transform:
       shouldPlayAnimation &&
-      interpolate(
-        [
-          x.interpolate([0, 0.3, 0.5, 0.8, 1], [1, 0.8, 1, 1.2, 1]),
-          x.interpolate([0, 0.3, 0.5, 0.8, 1], [0, 15, 0, -7, 0])
-        ],
+      to(
+        [x.to([0, 0.3, 0.5, 0.8, 1], [1, 0.8, 1, 1.2, 1]), x.to([0, 0.3, 0.5, 0.8, 1], [0, 15, 0, -7, 0])],
         (scale, rotation) => `scale(${scale}) rotate(${rotation}deg)`
       )
   };

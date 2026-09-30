@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { spacingSmall, fontWeightBold } from '../../styles/designTokens';
+import { fontWeightBold, spacingSmall } from '../../styles/designTokens';
 
 const Description = styled.p`
   font-weight: ${fontWeightBold};

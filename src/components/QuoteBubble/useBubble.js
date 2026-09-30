@@ -1,9 +1,9 @@
 // Custom hook to keep data required for smooth animation tranistions
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-import { extractRole, extractAction, extractQuoteID } from '../../utils/extractFromPath';
 import checkIfInDefaultPose from '../../utils/checkIfInDefaultPose';
+import { extractAction, extractQuoteID, extractRole } from '../../utils/extractFromPath';
 import { getQuote } from '../../utils/quotesService';
 
 function useBubble(pathname) {

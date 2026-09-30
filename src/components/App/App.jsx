@@ -1,22 +1,21 @@
-import React from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { Route, withRouter, Switch } from 'react-router-dom';
 
-import { FRONT_END_ROLE, BACK_END_ROLE, DEV_OPS_ROLE } from '../../constants/roles';
+import { BACK_END_ROLE, DEV_OPS_ROLE, FRONT_END_ROLE } from '../../constants/roles';
 import { ROOT_PATH } from '../../constants/routes';
-import { location, history } from '../../types';
 import { GenderProvider } from '../../context/GenderContext';
 import { RouteTransitionAnimationProvider } from '../../context/RouteTransitionAnimationContext';
+import { history, location } from '../../types';
 import generateTheme from '../../utils/generateTheme';
-import ErrorBoundary from '../ErrorBoundary';
 import AppBar from '../AppBar';
-import Footer from '../Footer';
-import LandingPage from '../LandingPage';
-import FrontEndRolePage from '../FrontEndRolePage';
 import BackEndRolePage from '../BackEndRolePage';
 import DevOpsRolePage from '../DevOpsRolePage';
-import RouteTransitionAnimation from '../RouteTransitionAnimation';
+import ErrorBoundary from '../ErrorBoundary';
+import Footer from '../Footer';
+import FrontEndRolePage from '../FrontEndRolePage';
+import LandingPage from '../LandingPage';
 import PageNotFound from '../PageNotFound';
+import RouteTransitionAnimation from '../RouteTransitionAnimation';
 import Wrapper from './Wrapper';
 
 function App({ location, history }) {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import media from '../../styles/media';
 import { colorWhite, spacingMedium } from '../../styles/designTokens';
+import media from '../../styles/media';
 
 const Wrapper = styled.header`
   width: 100%;

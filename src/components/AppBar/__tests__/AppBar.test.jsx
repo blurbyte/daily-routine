@@ -1,9 +1,8 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import AppBar from '../AppBar';
 import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
+import AppBar from '../AppBar';
 
 afterEach(cleanup);
 

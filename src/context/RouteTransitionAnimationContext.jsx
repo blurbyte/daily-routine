@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import { createContext, useState } from 'react';
 
 import { history } from '../types';
 
