@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { use } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 import { FEMALE } from '../../../constants/genders';
@@ -23,7 +23,7 @@ const AnimatedHead = styled.div`
 `;
 
 function Head({ pose }) {
-  const { gender } = useContext(GenderContext);
+  const { gender } = use(GenderContext);
 
   return (
     <AnimatedHead>

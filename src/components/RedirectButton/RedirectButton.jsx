@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
+import { use } from 'react';
 
 import { RouteTransitionAnimationContext } from '../../context/RouteTransitionAnimationContext';
 import Button from '../Button';
 import ArrowIcon from './ArrowIcon';
 
 function RedirectButton({ children, to, ...props }) {
-  const { animateAndRedirect } = useContext(RouteTransitionAnimationContext);
+  const { animateAndRedirect } = use(RouteTransitionAnimationContext);
 
   function handleClick(e) {
     e.preventDefault();

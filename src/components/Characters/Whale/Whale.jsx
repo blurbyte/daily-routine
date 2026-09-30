@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { use } from 'react';
 
 import { FEMALE } from '../../../constants/genders';
 import { CONFESS, DEFAULT } from '../../../constants/roleActions';
@@ -12,7 +12,7 @@ import Tear from './Tear';
 import WhaleArtwork from './WhaleArtwork';
 
 function Whale({ pose = DEFAULT }) {
-  const { gender } = useContext(GenderContext);
+  const { gender } = use(GenderContext);
 
   return (
     <>

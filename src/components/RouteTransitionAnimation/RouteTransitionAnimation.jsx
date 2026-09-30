@@ -1,11 +1,11 @@
-import { useContext } from 'react';
+import { use } from 'react';
 
 import { RouteTransitionAnimationContext } from '../../context/RouteTransitionAnimationContext';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 import AnimatedOverlay from './AnimatedOverlay';
 
 function RouteTransitionAnimation({ location }) {
-  const { isAnimating, stopAnimation } = useContext(RouteTransitionAnimationContext);
+  const { isAnimating, stopAnimation } = use(RouteTransitionAnimationContext);
   useLockBodyScroll(isAnimating);
 
   return isAnimating && <AnimatedOverlay location={location} onFinished={stopAnimation} />;

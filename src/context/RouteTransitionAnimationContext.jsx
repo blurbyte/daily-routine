@@ -3,7 +3,6 @@ import { createContext, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 const RouteTransitionAnimationContext = createContext();
-const { Provider } = RouteTransitionAnimationContext;
 
 function RouteTransitionAnimationProvider({ children }) {
   const REDIRECT_DELAY = 250;
@@ -28,7 +27,11 @@ function RouteTransitionAnimationProvider({ children }) {
 
   const [isAnimating, setIsAnimating] = useState(false);
 
-  return <Provider value={{ isAnimating, animateAndRedirect, stopAnimation }}>{children}</Provider>;
+  return (
+    <RouteTransitionAnimationContext value={{ isAnimating, animateAndRedirect, stopAnimation }}>
+      {children}
+    </RouteTransitionAnimationContext>
+  );
 }
 
 RouteTransitionAnimationProvider.propTypes = {

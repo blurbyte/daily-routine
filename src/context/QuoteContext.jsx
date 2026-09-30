@@ -2,14 +2,13 @@ import PropTypes from 'prop-types';
 import { createContext, useState } from 'react';
 
 const QuoteContext = createContext();
-const { Provider } = QuoteContext;
 
 function QuoteProvider({ children }) {
   const [quote, setQuote] = useState(null);
 
   const handleQuoteChange = quote => setQuote(quote);
 
-  return <Provider value={{ quote, handleQuoteChange }}>{children}</Provider>;
+  return <QuoteContext value={{ quote, handleQuoteChange }}>{children}</QuoteContext>;
 }
 
 QuoteProvider.propTypes = {

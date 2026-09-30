@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { use } from 'react';
 import { Link as LinkBase, useLocation } from 'react-router';
 import styled from 'styled-components';
 
@@ -50,7 +50,7 @@ const Tagline = styled.p`
 
 function Logo() {
   const location = useLocation();
-  const { animateAndRedirect } = useContext(RouteTransitionAnimationContext);
+  const { animateAndRedirect } = use(RouteTransitionAnimationContext);
 
   function isRootPath(location) {
     return location.pathname !== ROOT_PATH;

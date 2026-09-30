@@ -1,6 +1,6 @@
 import { useTransition } from '@react-spring/web';
 import PropTypes from 'prop-types';
-import { useContext, useEffect } from 'react';
+import { use, useEffect } from 'react';
 import { useLocation } from 'react-router';
 
 import { SPEECH, THOUGHT } from '../../constants/speechBubbleVariant';
@@ -20,10 +20,10 @@ const ERROR_MESSAGE =
 
 function QuoteBubble({ className }) {
   const { pathname } = useLocation();
-  const { handleQuoteChange } = useContext(QuoteContext);
+  const { handleQuoteChange } = use(QuoteContext);
 
   const bubble = useBubble(pathname);
-  // Puts quote into context
+
   useEffect(() => {
     handleQuoteChange(bubble.quote);
   }, [bubble.quote, handleQuoteChange]);

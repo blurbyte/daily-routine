@@ -5,7 +5,6 @@ import { MALE } from '../constants/genders';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const GenderContext = createContext();
-const { Provider } = GenderContext;
 
 const GENDER_LOCAL_STORAGE_KEY = 'DAILY_ROUTINE_GENDER';
 
@@ -14,7 +13,7 @@ function GenderProvider({ children }) {
 
   const handleGenderChange = gender => setGender(gender);
 
-  return <Provider value={{ gender, handleGenderChange }}>{children}</Provider>;
+  return <GenderContext value={{ gender, handleGenderChange }}>{children}</GenderContext>;
 }
 
 GenderProvider.propTypes = {
