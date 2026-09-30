@@ -4,7 +4,7 @@ import { zIndexDefault } from '../../../styles/designTokens';
 
 function ShadowArtwork(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="147" height="22" viewBox="0 0 147 22" {...props}>
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="147" height="22" viewBox="0 0 147 22" {...props}>
       <path
         opacity="0.2"
         fill="#222"

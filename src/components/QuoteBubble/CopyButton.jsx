@@ -11,7 +11,7 @@ function CopyButton({ valueToCopy }) {
 
   return (
     <CopyToClipboard text={valueToCopy} onCopy={() => setIsVisible(true)}>
-      <Hitbox data-testid="copy-to-clipboard-button">
+      <Hitbox aria-label="Copy quote" data-testid="copy-to-clipboard-button">
         <CopyNotification isVisible={isNotificationVisible} onFinished={() => setIsVisible(false)} />
         <CopyCards />
       </Hitbox>

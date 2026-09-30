@@ -10,7 +10,7 @@ function MobileShare() {
   };
 
   return (
-    <Hitbox onClick={share}>
+    <Hitbox aria-label="Share on social media" onClick={share}>
       <Share />
     </Hitbox>
   );

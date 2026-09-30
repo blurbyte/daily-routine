@@ -19,7 +19,7 @@ const LeftArm = styled(LeftArmArtwork)`
 
 function LeftArmArtwork(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="100" viewBox="0 0 38 100" {...props}>
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="38" height="100" viewBox="0 0 38 100" {...props}>
       <path
         fill="currentColor"
         d="M18.529 27.151c2.963 6.851 4.017 27.5-3.262 40.846 0 0-16.277 7.348-12.625 21.937 1.224-2.975 5.705-10.728 15.683-7.785 3.994 1.178 8.866 6.558 10.469 14.978 4.17-4.961 8.634-9.766 3.177-20.695 0 0 12.278-19.161 1.189-51.956l-14.631 2.675z"

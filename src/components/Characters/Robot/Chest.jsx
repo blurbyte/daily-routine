@@ -18,7 +18,7 @@ const Chest = styled(ChestArtwork)`
 
 function ChestArtwork(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="117" height="93" viewBox="0 0 117 93" {...props}>
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="117" height="93" viewBox="0 0 117 93" {...props}>
       <path fill="currentColor" d="M13.287 5.033L4.614 88.741l109.756-5.08-10.789-81.852z" />
       <path
         d="M80.341 43.583c-.567.867-1.404 4.231-1.883 5.154l-34.545 3.415-1.883-31.457c.158-.311.253-.678.253-1.108v-7.25c.448-.514.893-1.029 1.312-1.565l28.359-.604 8.221 28.589c-.2.437-.269.956-.136 1.542.244 1.084.253 2.186.302 3.284z"

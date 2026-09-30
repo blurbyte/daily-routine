@@ -3,7 +3,7 @@ import { pose } from '../../../types';
 
 function WhaleArtwork({ pose = DEFAULT }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="270" height="225" viewBox="0 0 270 225">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="270" height="225" viewBox="0 0 270 225">
       {/* Smiling face expression */}
       {pose === BRAG && (
         <g>

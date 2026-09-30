@@ -7,7 +7,7 @@ const BUBBLE_TYPE = {
 
 function SpeechBubble({ variant = BUBBLE_TYPE.SPEECH }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="209" height="135" viewBox="0 0 209 135">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="209" height="135" viewBox="0 0 209 135">
       {variant === BUBBLE_TYPE.THOUGHT && (
         <path
           fill="#fff"

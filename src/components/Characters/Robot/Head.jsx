@@ -39,7 +39,7 @@ Head.propTypes = {
 
 function HeadArtwork({ pose = DEFAULT, ...props }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="110" height="63" viewBox="0 0 110 63" {...props}>
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="110" height="63" viewBox="0 0 110 63" {...props}>
       <path
         fill="currentColor"
         d="M15.698 6.421v51.467l20.835 3.473 61.141-2.605v-6.274h-3.493l.853-13.493 2.051-.572V5.925L37.278 1.832z"

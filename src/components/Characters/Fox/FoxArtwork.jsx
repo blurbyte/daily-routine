@@ -3,7 +3,7 @@ import { pose } from '../../../types';
 
 function FoxArtwork({ pose = DEFAULT }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317 157">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317 157">
       <g>
         <path
           fill="#222"

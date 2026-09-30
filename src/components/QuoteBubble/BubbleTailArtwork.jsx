@@ -3,7 +3,7 @@ import { speechBubbleVariant } from '../../types';
 
 function BubbleTailArtwork({ variant = SPEECH, ...props }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="68" height="42" viewBox="0 0 68 42" {...props}>
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="68" height="42" viewBox="0 0 68 42" {...props}>
       {variant === THOUGHT && (
         <g>
           <path

@@ -19,7 +19,7 @@ const RightLeg = styled(RightLegArtwork)`
 
 function RightLegArtwork(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="90" viewBox="0 0 52 90" {...props}>
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="52" height="90" viewBox="0 0 52 90" {...props}>
       <path
         fill="currentColor"
         d="M8.232 70.83h30.974s1.638-2.635 4-7.488c3.328-6.839 7.615-18.161 6.615-33.401-.349-5.312-2.177-10.959-4.776-17.103l-20.078 4.448c3.517 10.774 6.596 22.028-7.154 42.847-2.389 3.617-5.909 6.553-9.581 10.697z"

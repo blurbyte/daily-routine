@@ -7,17 +7,19 @@ const socialMediaData = {
   [FACEBOOK]: {
     shareUrl: `http://www.facebook.com/sharer.php?u=${window.location.href}`,
     icon: Facebook,
+    label: 'Share on Facebook',
     testID: 'facebook-share-button'
   },
   [TWITTER]: {
     shareUrl: `http://www.twitter.com/share?url=${window.location.href}`,
     icon: Twitter,
+    label: 'Share on Twitter',
     testID: 'twitter-share-button'
   }
 };
 
 function DesktopShare({ variant }) {
-  const { icon: Icon, shareUrl, testID } = socialMediaData[variant];
+  const { icon: Icon, label, shareUrl, testID } = socialMediaData[variant];
 
   const share = () =>
     window.open(
@@ -27,7 +29,7 @@ function DesktopShare({ variant }) {
     );
 
   return (
-    <Hitbox onClick={share} data-testid={testID}>
+    <Hitbox aria-label={label} onClick={share} data-testid={testID}>
       <Icon />
     </Hitbox>
   );

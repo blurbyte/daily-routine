@@ -1,6 +1,6 @@
 function CopyIndicator(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" {...props}>
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" {...props}>
       <path
         fill="#ccc"
         d="M11 0H6C3.794 0 2 1.794 2 4v8c0 2.206 1.794 4 4 4h5c2.206 0 4-1.794 4-4V4c0-2.206-1.794-4-4-4zm2 12c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V4a2 2 0 0 1 2-2h5c1.1 0 2 .9 2 2v8z"

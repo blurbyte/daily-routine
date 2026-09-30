@@ -19,7 +19,7 @@ const LeftLeg = styled(LeftLegArtwork)`
 
 function LeftLegArtwork(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="62" height="90" viewBox="0 0 62 90" {...props}>
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="62" height="90" viewBox="0 0 62 90" {...props}>
       <path
         fill="currentColor"
         d="M11.851 13.339c6.175 8.414 21.554 25.969 8.037 53.466l23.832.793c.2-.987.084-2.093.29-3.302.774-4.541 1.907-10.553 1.677-17.339-.221-6.513-1.775-13.729-4.762-21.052-1.472-3.608-3.097-7.25-5.463-10.832l-1.387-4.34-22.224 2.606z"

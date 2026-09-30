@@ -1,13 +1,6 @@
 function GithubLogo() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="19"
-      height="18"
-      viewBox="0 0 19 18"
-      aria-labelledby="github-logo-title"
-    >
-      <title id="github-logo-title">Github</title>
+    <svg aria-label="Github" role="img" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
       <path
         fill="#222"
         fillRule="evenodd"
