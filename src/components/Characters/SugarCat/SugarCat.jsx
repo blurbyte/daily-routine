@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import Frame from './Frame';
 import SugarCatArtwork from './SugarCatArtwork';
 import SugarCubeLegs from './SugarCubeLegs';
@@ -14,4 +16,4 @@ function SugarCat() {
   );
 }
 
-export default SugarCat;
+export default memo(SugarCat);

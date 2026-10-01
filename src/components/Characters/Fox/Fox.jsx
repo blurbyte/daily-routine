@@ -1,4 +1,4 @@
-import { use } from 'react';
+import { memo, use } from 'react';
 
 import { FEMALE } from '../../../constants/genders';
 import { CONFESS, DEFAULT } from '../../../constants/roleActions';
@@ -32,4 +32,4 @@ Fox.propTypes = {
   pose
 };
 
-export default Fox;
+export default memo(Fox);

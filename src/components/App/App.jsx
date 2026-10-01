@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 
@@ -19,10 +20,12 @@ import Wrapper from './Wrapper';
 
 function App() {
   const location = useLocation();
+  const { primaryColor, secondaryColor } = generateTheme(location.pathname);
+  const theme = useMemo(() => ({ primaryColor, secondaryColor }), [primaryColor, secondaryColor]);
 
   return (
     <RouteTransitionAnimationProvider>
-      <ThemeProvider theme={generateTheme(location.pathname)}>
+      <ThemeProvider theme={theme}>
         <>
           <RouteTransitionAnimation location={location} />
           <GenderProvider>

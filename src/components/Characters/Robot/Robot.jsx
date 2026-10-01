@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { CONFESS, DEFAULT } from '../../../constants/roleActions';
 import { pose } from '../../../types';
 import ConfusionMarks from './ConfusionMarks';
@@ -19,4 +21,4 @@ Robot.propTypes = {
   pose
 };
 
-export default Robot;
+export default memo(Robot);

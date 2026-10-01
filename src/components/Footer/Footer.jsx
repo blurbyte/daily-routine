@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import Content from './Content';
 import CraftedWithLove from './CraftedWithLove';
 import Wrapper from './Wrapper';
@@ -12,4 +14,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);

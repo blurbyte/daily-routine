@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { createContext } from 'react';
+import { createContext, useMemo } from 'react';
 
 import { MALE } from '../constants/genders';
 import useLocalStorage from '../hooks/useLocalStorage';
@@ -11,9 +11,9 @@ const GENDER_LOCAL_STORAGE_KEY = 'DAILY_ROUTINE_GENDER';
 function GenderProvider({ children }) {
   const [gender, setGender] = useLocalStorage(GENDER_LOCAL_STORAGE_KEY, MALE);
 
-  const handleGenderChange = gender => setGender(gender);
+  const value = useMemo(() => ({ gender, handleGenderChange: setGender }), [gender, setGender]);
 
-  return <GenderContext value={{ gender, handleGenderChange }}>{children}</GenderContext>;
+  return <GenderContext value={value}>{children}</GenderContext>;
 }
 
 GenderProvider.propTypes = {

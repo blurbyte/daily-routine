@@ -1,4 +1,4 @@
-import { use } from 'react';
+import { memo, use } from 'react';
 
 import { FEMALE } from '../../../constants/genders';
 import { CONFESS, DEFAULT } from '../../../constants/roleActions';
@@ -31,4 +31,4 @@ Whale.propTypes = {
   pose
 };
 
-export default Whale;
+export default memo(Whale);
