@@ -11,12 +11,14 @@ const Wrapper = styled(animated.span)`
   transform-origin: '50% 50%';
 `;
 
+const SPRING_CONFIG = { mass: 1, tension: 160, friction: 8 };
+
 function GenderFlower({ isVisible, className }) {
   const transitions = useTransition(isVisible, {
     from: { opacity: 0, transform: 'scale(0) rotate(-180deg)' },
-    enter: { opacity: 1, transform: 'scale(1) rotate(0)' },
+    enter: { opacity: 1, transform: 'scale(1) rotate(0deg)' },
     leave: { opacity: 0, transform: 'scale(0) rotate(-180deg)' },
-    config: { mass: 1, tension: 160, friction: 8, delay: 200 }
+    config: () => key => (key === 'opacity' ? { ...SPRING_CONFIG, clamp: true } : SPRING_CONFIG)
   });
 
   return transitions((style, item) => {

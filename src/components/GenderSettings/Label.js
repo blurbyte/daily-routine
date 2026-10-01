@@ -1,34 +1,25 @@
 import styled from 'styled-components';
 
-import { borderRadius, borderWidthThick, colorWhite } from '../../styles/designTokens';
+import { colorWhite } from '../../styles/designTokens';
 
 const Label = styled.label`
   position: relative;
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  height: 3.6rem;
-  width: 100%;
-  background-color: ${({ theme, checked }) => (checked ? theme.secondaryColor : colorWhite)};
-  color: ${({ theme, checked }) => (checked ? colorWhite : theme.secondaryColor)};
-  border: ${borderWidthThick} solid ${({ theme }) => theme.secondaryColor};
-  border-left: none;
+  color: ${({ theme }) => theme.secondaryColor};
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: color 140ms ease-out;
 
-  &:first-child {
-    border-radius: ${borderRadius} 0 0 ${borderRadius};
-    border-left: ${borderWidthThick} solid ${({ theme }) => theme.secondaryColor};
+  /* Selected state comes straight from the radio input inside */
+  &:has(input:checked) {
+    color: ${colorWhite};
   }
-
-  &:last-child {
-    border-radius: 0 ${borderRadius} ${borderRadius} 0;
-  }
-
-  transition: 150ms linear;
 `;
 
 export default Label;
