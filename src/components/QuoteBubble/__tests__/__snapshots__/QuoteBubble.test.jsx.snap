@@ -24,23 +24,6 @@ exports[`COMPONENT - QuoteBubble > renders correctly 1`] = `
   <mock-wrapper>
     <section
       class="c0"
-      style="opacity: 0; transform: perspective(600px) rotateX(45deg) translateY(-20px) scale(0.8); color: rgb(255, 255, 255);"
-    >
-      <mock-quote
-        data-testid="quote-error-message"
-        error=""
-      >
-        <strong>
-          4o4 Error
-        </strong>
-         – The blockchain distributed ledger failed to achieve quorum with deep learning neural network of your pseudo-generated Turning complaisant daily message.
-      </mock-quote>
-      <mock-bubble-tail
-        variant="thought"
-      />
-    </section>
-    <section
-      class="c0"
       style="opacity: 0; transform: perspective(600px) rotateX(45deg) translateY(-20px) scale(0.8);"
     >
       <mock-quote
