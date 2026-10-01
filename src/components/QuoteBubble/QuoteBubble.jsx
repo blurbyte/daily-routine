@@ -53,7 +53,7 @@ function QuoteBubble({ className }) {
             item && (
               <Bubble style={style}>
                 {item.quote ? (
-                  <Quote>{trimQuote(item.quote)}</Quote>
+                  <Quote data-testid="quote">{trimQuote(item.quote)}</Quote>
                 ) : (
                   <Quote error data-testid="quote-error-message">
                     <strong>4o4 Error</strong>

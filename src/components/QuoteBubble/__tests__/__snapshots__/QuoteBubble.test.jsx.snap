@@ -43,7 +43,9 @@ exports[`COMPONENT - QuoteBubble > renders correctly 1`] = `
       class="c0"
       style="opacity: 0; transform: perspective(600px) rotateX(45deg) translateY(-20px) scale(0.8);"
     >
-      <mock-quote>
+      <mock-quote
+        data-testid="quote"
+      >
         Daily in 5 minutes and I'm still not sure what to say...
       </mock-quote>
       <mock-bubble-tail
