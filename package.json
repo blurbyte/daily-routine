@@ -9,7 +9,6 @@
     "start:build": "vite build && vite preview",
     "test": "vitest",
     "test:update": "vitest run --update",
-    "test:ci": "vitest run",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -21,6 +20,7 @@
     "react": "19.3.0",
     "react-copy-to-clipboard": "5.1.1",
     "react-dom": "19.3.0",
+    "react-error-boundary": "6.1.6",
     "react-focus-lock": "2.13.7",
     "react-router": "7.18.4",
     "styled-components": "6.5.3"

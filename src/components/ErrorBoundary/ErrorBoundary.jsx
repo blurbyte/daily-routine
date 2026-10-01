@@ -1,24 +1,10 @@
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
 
 import Error from '../Error';
 
-class ErrorBoundary extends Component {
-  state = {
-    hasError: false
-  };
-
-  componentDidCatch() {
-    this.setState({ hasError: true });
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <Error />;
-    }
-
-    return this.props.children;
-  }
+function ErrorBoundary({ children }) {
+  return <ReactErrorBoundary fallback={<Error />}>{children}</ReactErrorBoundary>;
 }
 
 ErrorBoundary.propTypes = {
