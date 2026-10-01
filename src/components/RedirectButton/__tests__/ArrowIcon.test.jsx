@@ -1,15 +1,15 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import ArrowIcon from '../ArrowIcon';
 
-jest.mock('../../Icons', () => ({
-  LongArrow: 'LongArrow'
+vi.mock('../../Icons', () => ({
+  LongArrow: 'mock-long-arrow'
 }));
 
 describe('COMPONENT - ArrowIcon', () => {
   it('renders correctly', () => {
-    const component = create(<ArrowIcon />);
+    const { container } = render(<ArrowIcon />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

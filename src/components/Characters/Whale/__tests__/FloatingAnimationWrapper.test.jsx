@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import FloatingAnimationWrapper from '../FloatingAnimationWrapper';
 
 describe('COMPONENT - Characters Whale FloatingAnimationWrapper', () => {
   it('renders correctly', () => {
-    const component = create(<FloatingAnimationWrapper />);
+    const { container } = render(<FloatingAnimationWrapper />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Cross from '../Cross';
 
 describe('COMPONENT - Icons Cross', () => {
   it('renders correctly', () => {
-    const component = create(<Cross />);
+    const { container } = render(<Cross />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

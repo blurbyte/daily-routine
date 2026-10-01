@@ -1,4 +1,4 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
 import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
@@ -14,7 +14,7 @@ describe('COMPONENT - RouteTransitionAnimation', () => {
       secondaryColor: '#222'
     };
 
-    const component = create(
+    const { container } = render(
       <ThemeProvider theme={theme}>
         <RouteTransitionAnimationContext.Provider value={{ animateAndRedirect, isAnimating, stopAnimation }}>
           <RouteTransitionAnimation />
@@ -22,6 +22,6 @@ describe('COMPONENT - RouteTransitionAnimation', () => {
       </ThemeProvider>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

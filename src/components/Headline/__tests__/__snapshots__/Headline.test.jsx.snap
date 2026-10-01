@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Headline > renders correctly 1`] = `
+.c0 {
+  font-size: 2.4rem;
+  margin: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    text-align: left;
+  }
+}
+
+<div>
+  <h1
+    class="c0"
+  />
+</div>
+`;

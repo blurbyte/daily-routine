@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Tail from '../Tail';
 
 describe('COMPONENT - Characters Fox Tail', () => {
   it('renders correctly', () => {
-    const component = create(<Tail />);
+    const { container } = render(<Tail />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

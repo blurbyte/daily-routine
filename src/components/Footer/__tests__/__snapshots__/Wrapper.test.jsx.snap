@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Footer Wrapper > renders correctly 1`] = `
+.c0 {
+  background: #ffffff;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    background: inherit;
+  }
+}
+
+<div>
+  <footer
+    class="c0"
+  />
+</div>
+`;

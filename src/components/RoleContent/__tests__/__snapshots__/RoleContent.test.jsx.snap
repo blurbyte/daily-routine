@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - RoleContent > renders correctly 1`] = `
+.c0 {
+  max-width: 48rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  align-items: end;
+}
+
+<div>
+  <div
+    class="c0"
+  />
+</div>
+`;

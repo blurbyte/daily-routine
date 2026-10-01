@@ -1,14 +1,11 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { fireEvent, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
 import RedirectButton from '../RedirectButton';
-
-afterEach(cleanup);
-
 describe('COMPONENT - RedirectButton', () => {
   it('renders correctly', () => {
-    const animateAndRedirect = jest.fn();
+    const animateAndRedirect = vi.fn();
 
     const { getByTestId } = render(
       <MemoryRouter initialEntries={['/']} initialIndex={1}>

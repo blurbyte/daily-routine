@@ -1,18 +1,18 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import { SPEECH, THOUGHT } from '../../../constants/speechBubbleVariant';
 import BubbleTailArtwork from '../BubbleTailArtwork';
 
 describe('COMPONENT - QuoteBubble BubbleTailArtwork', () => {
   it("renders correctly when 'speech' variant is passed", () => {
-    const component = create(<BubbleTailArtwork variant={SPEECH} />);
+    const { container } = render(<BubbleTailArtwork variant={SPEECH} />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it("renders correctly when 'thought' variant is passed", () => {
-    const component = create(<BubbleTailArtwork variant={THOUGHT} />);
+    const { container } = render(<BubbleTailArtwork variant={THOUGHT} />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

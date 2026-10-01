@@ -1,0 +1,141 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Robot > renders confusion marks and flower if female fox is in default pose 1`] = `
+.c0 {
+  padding: 0;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.c1 {
+  padding-top: 3rem;
+  display: flex;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+<div>
+  <div
+    class="c0 c1"
+  >
+    <mock-frame>
+      <mock-fox-artwork
+        pose="default"
+      />
+      <mock-tail />
+    </mock-frame>
+    <mock-confusion-marks />
+    <mock-gender-flower
+      isvisible=""
+    />
+  </div>
+</div>
+`;
+
+exports[`COMPONENT - Characters Robot > renders confusion marks if fox is in default pose 1`] = `
+.c0 {
+  padding: 0;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.c1 {
+  padding-top: 3rem;
+  display: flex;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+<div>
+  <div
+    class="c0 c1"
+  >
+    <mock-frame>
+      <mock-fox-artwork
+        pose="default"
+      />
+      <mock-tail />
+    </mock-frame>
+    <mock-confusion-marks />
+    <mock-gender-flower />
+  </div>
+</div>
+`;
+
+exports[`COMPONENT - Characters Robot > renders correctly with default props 1`] = `
+.c0 {
+  padding: 0;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.c1 {
+  padding-top: 3rem;
+  display: flex;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+<div>
+  <div
+    class="c0 c1"
+  >
+    <mock-frame>
+      <mock-fox-artwork
+        pose="default"
+      />
+      <mock-tail />
+    </mock-frame>
+    <mock-confusion-marks />
+    <mock-gender-flower />
+  </div>
+</div>
+`;
+
+exports[`COMPONENT - Characters Robot > renders flower if female gender is passed 1`] = `
+.c0 {
+  padding: 0;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.c1 {
+  padding-top: 3rem;
+  display: flex;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+<div>
+  <div
+    class="c0 c1"
+  >
+    <mock-frame>
+      <mock-fox-artwork
+        pose="default"
+      />
+      <mock-tail />
+    </mock-frame>
+    <mock-confusion-marks />
+    <mock-gender-flower
+      isvisible=""
+    />
+  </div>
+</div>
+`;

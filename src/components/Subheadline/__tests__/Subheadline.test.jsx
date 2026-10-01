@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Subheadline from '../Subheadline';
 
 describe('COMPONENT - Subheadline', () => {
   it('renders correctly', () => {
-    const component = create(<Subheadline />);
+    const { container } = render(<Subheadline />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

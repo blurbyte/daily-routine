@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Chest from '../Chest';
 
 describe('COMPONENT - Characters Robot Chest', () => {
   it('renders correctly', () => {
-    const component = create(<Chest />);
+    const { container } = render(<Chest />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

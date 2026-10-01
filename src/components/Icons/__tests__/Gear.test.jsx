@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Gear from '../Gear';
 
 describe('COMPONENT - Icons Gear', () => {
   it('renders correctly', () => {
-    const component = create(<Gear />);
+    const { container } = render(<Gear />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

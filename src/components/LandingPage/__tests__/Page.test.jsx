@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Page from '../Page';
 
 describe('COMPONENT - LandingPage Page', () => {
   it('renders correctly', () => {
-    const component = create(<Page>Taylor Swift</Page>);
+    const { container } = render(<Page>Taylor Swift</Page>);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,13 +1,13 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import ConfusionMarks from '../ConfusionMarks';
 
-jest.mock('../../CharactersDecors/ConfusionMarks', () => 'ConfusionMarks');
+vi.mock('../../CharactersDecors/ConfusionMarks', () => ({ default: 'mock-confusion-marks' }));
 
 describe('COMPONENT - Characters Whale GenderFlower', () => {
   it('renders correctly', () => {
-    const component = create(<ConfusionMarks />);
+    const { container } = render(<ConfusionMarks />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

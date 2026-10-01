@@ -1,15 +1,15 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import LightbulbIcon from '../LightbulbIcon';
 
-jest.mock('../../Icons', () => ({
-  Lightbulb: 'Lightbulb'
+vi.mock('../../Icons', () => ({
+  Lightbulb: 'mock-lightbulb'
 }));
 
 describe('COMPONENT - ActionButtons LightbulbIcon', () => {
   it('renders correctly', () => {
-    const component = create(<LightbulbIcon />);
+    const { container } = render(<LightbulbIcon />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

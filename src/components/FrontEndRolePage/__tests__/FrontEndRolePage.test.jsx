@@ -1,29 +1,29 @@
-import { MemoryRouter } from 'react-router-dom';
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import { FRONT_END_ROLE } from '../../../constants/roles';
 import FrontEndRolePage from '../FrontEndRolePage';
 
-jest.mock('../../Characters', () => ({
-  Fox: 'Fox'
+vi.mock('../../Characters', () => ({
+  Fox: 'mock-fox'
 }));
-jest.mock('../../ActionButtons', () => 'ActionButtons');
-jest.mock('../../RoleBar', () => 'RoleBar');
-jest.mock('../../QuoteBubble', () => 'QuoteBubble');
-jest.mock('../../Page', () => 'Page');
-jest.mock('../../RoleContent', () => 'RoleContent');
-jest.mock('../../Section', () => 'Section');
-jest.mock('../../Character', () => 'Character');
-jest.mock('../../Characters/Fox', () => 'Fox');
+vi.mock('../../ActionButtons', () => ({ default: 'mock-action-buttons' }));
+vi.mock('../../RoleBar', () => ({ default: 'mock-role-bar' }));
+vi.mock('../../QuoteBubble', () => ({ default: 'mock-quote-bubble' }));
+vi.mock('../../Page', () => ({ default: 'mock-page' }));
+vi.mock('../../RoleContent', () => ({ default: 'mock-role-content' }));
+vi.mock('../../Section', () => ({ default: 'mock-section' }));
+vi.mock('../../Character', () => ({ default: 'mock-character' }));
+vi.mock('../../Characters/Fox', () => ({ default: 'mock-fox' }));
 
 describe('COMPONENT - FrontEndRolePage', () => {
   it('renders correctly', () => {
-    const component = create(
+    const { container } = render(
       <MemoryRouter initialEntries={[`/${FRONT_END_ROLE}`]}>
         <FrontEndRolePage />
       </MemoryRouter>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

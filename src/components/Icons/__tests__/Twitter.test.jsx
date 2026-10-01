@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Twitter from '../Twitter';
 
 describe('COMPONENT - Icons Twitter', () => {
   it('renders correctly', () => {
-    const component = create(<Twitter />);
+    const { container } = render(<Twitter />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

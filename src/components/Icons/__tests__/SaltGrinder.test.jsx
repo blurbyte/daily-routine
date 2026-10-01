@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import SaltGrinder from '../SaltGrinder';
 
 describe('COMPONENT - Icons SaltGrinder', () => {
   it('renders correctly', () => {
-    const component = create(<SaltGrinder />);
+    const { container } = render(<SaltGrinder />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,15 +1,15 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import GearButton from '../GearButton';
 
-jest.mock('../../Icons', () => ({
-  Gear: 'Gear'
+vi.mock('../../Icons', () => ({
+  Gear: 'mock-gear'
 }));
 
 describe('COMPONENT - SettingsTrigger GearButton', () => {
   it('renders correctly', () => {
-    const component = create(<GearButton />);
+    const { container } = render(<GearButton />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

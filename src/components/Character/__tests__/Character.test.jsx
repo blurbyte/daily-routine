@@ -1,15 +1,10 @@
-import { act, cleanup, render } from '@testing-library/react';
-import { createMemoryHistory } from 'history';
-import { Router } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
-import { MALE } from '../../../constants/genders';
-import { GenderContext } from '../../../context/GenderContext';
+import { BRAG, CONFESS, DEFAULT } from '../../../constants/roleActions';
 import { QuoteContext } from '../../../context/QuoteContext';
 import { pose } from '../../../types';
-import { extractPose } from '../../../utils/extractFromPath';
-import CharacterWitQuote from '../Character';
-
-jest.mock('../../../utils/extractFromPath');
+import Character from '../Character';
 
 function MockCharacter({ pose }) {
   return <div data-testid="mock-character">{pose}</div>;
@@ -19,41 +14,34 @@ MockCharacter.propTypes = {
   pose
 };
 
-const mockHistory = createMemoryHistory({ initialEntries: ['/frontend/confess/1'] });
-
-function renderWithRouter(ui, { history = mockHistory } = {}) {
-  return {
-    ...render(<Router history={history}>{ui}</Router>),
-    history
-  };
-}
-
-function setupComponent() {
-  return renderWithRouter(
-    <GenderContext.Provider value={{ gender: MALE }}>
-      <QuoteContext.Provider value={{ quote: 'Taylor Swift', handleQuoteChange: jest.fn() }}>
-        <CharacterWitQuote>
+function renderCharacter(path, quote) {
+  return render(
+    <MemoryRouter initialEntries={[path]}>
+      <QuoteContext.Provider value={{ quote, handleQuoteChange: vi.fn() }}>
+        <Character>
           <MockCharacter />
-        </CharacterWitQuote>
+        </Character>
       </QuoteContext.Provider>
-    </GenderContext.Provider>
+    </MemoryRouter>
   );
 }
 
-describe('COMPONENT - CharacterWitQuote', () => {
-  afterEach(cleanup);
+describe('COMPONENT - Character', () => {
+  it('should render character component with default pose on role root path', () => {
+    const { getByTestId } = renderCharacter('/frontend', 'Taylor Swift');
+
+    expect(getByTestId('mock-character')).toHaveTextContent(DEFAULT);
+  });
 
   it('should render character component with brag pose', () => {
-    extractPose.mockImplementation(() => 'brag');
+    const { getByTestId } = renderCharacter('/frontend/brag/1', 'Taylor Swift');
 
-    const { getByTestId } = setupComponent();
+    expect(getByTestId('mock-character')).toHaveTextContent(BRAG);
+  });
 
-    act(() => {
-      mockHistory.push('/frontend/brag/1');
-    });
+  it('should render character component with confess pose when there is no quote', () => {
+    const { getByTestId } = renderCharacter('/frontend/brag/1', undefined);
 
-    expect(getByTestId('mock-character')).toBeDefined();
-    expect(getByTestId('mock-character')).toHaveTextContent('brag');
-    expect(extractPose).toBeCalled();
+    expect(getByTestId('mock-character')).toHaveTextContent(CONFESS);
   });
 });

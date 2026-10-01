@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Robot GenderFlower > renders correctly 1`] = `
+.c0 {
+  top: 0.4rem;
+  left: 0.5rem;
+}
+
+<div>
+  <mock-gender-flower
+    class="c0"
+  />
+</div>
+`;

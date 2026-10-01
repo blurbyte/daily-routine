@@ -1,12 +1,10 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { fireEvent, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import { ROOT_PATH } from '../../../constants/routes';
 import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
 import Logo from '../Logo';
-
-afterEach(cleanup);
-const animateAndRedirect = jest.fn();
+const animateAndRedirect = vi.fn();
 
 describe('COMPONENT - AppBar Logo', () => {
   it('renders correctly', () => {

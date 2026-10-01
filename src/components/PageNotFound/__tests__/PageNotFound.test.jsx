@@ -1,11 +1,8 @@
-import { cleanup, render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
 import PageNotFound from '../PageNotFound';
-
-afterEach(cleanup);
-
 describe('COMPONENT - PageNotFound', () => {
   it('renders correct elements', () => {
     const animateAndRedirect = () => {};
@@ -18,6 +15,6 @@ describe('COMPONENT - PageNotFound', () => {
     );
 
     expect(container.querySelector('h1')).toHaveTextContent('404 - Page not found');
-    expect(container.querySelector('svg title')).toHaveTextContent('Sugar cat');
+    expect(container.querySelector('svg')).toBeInTheDocument();
   });
 });

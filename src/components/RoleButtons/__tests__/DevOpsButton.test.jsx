@@ -1,13 +1,13 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import DevOpsButton from '../DevOpsButton';
 
-jest.mock('../../RedirectButton', () => 'RedirectButton');
+vi.mock('../../RedirectButton', () => ({ default: 'mock-redirect-button' }));
 
 describe('COMPONENT - RoleButtons DevOpsButton', () => {
   it('renders correctly', () => {
-    const component = create(<DevOpsButton to="/devops">Dev Ops</DevOpsButton>);
+    const { container } = render(<DevOpsButton to="/devops">Dev Ops</DevOpsButton>);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

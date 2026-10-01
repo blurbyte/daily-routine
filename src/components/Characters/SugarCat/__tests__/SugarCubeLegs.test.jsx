@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import SugarCubeLegs from '../SugarCubeLegs';
 
 describe('COMPONENT - Characters SugarCat SugarCubeLegs', () => {
   it('renders correctly', () => {
-    const component = create(<SugarCubeLegs />);
+    const { container } = render(<SugarCubeLegs />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

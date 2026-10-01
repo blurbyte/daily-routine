@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - FrontEndRolePage > renders correctly 1`] = `
+<div>
+  <mock-page
+    title="Front End Developer"
+  >
+    <mock-role-bar
+      label="Front End Developer"
+    />
+    <mock-section>
+      <mock-role-content>
+        <mock-quote-bubble />
+        <mock-character>
+          <mock-fox />
+        </mock-character>
+      </mock-role-content>
+    </mock-section>
+    <mock-action-buttons
+      role="frontend"
+    />
+  </mock-page>
+</div>
+`;

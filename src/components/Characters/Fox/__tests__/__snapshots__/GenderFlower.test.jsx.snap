@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Fox GenderFlower > renders correctly 1`] = `
+<div>
+  <mock-gender-flower />
+</div>
+`;

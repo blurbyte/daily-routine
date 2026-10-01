@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Frame from '../Frame';
 
 describe('COMPONENT - Characters Fox Frame', () => {
   it('renders correctly', () => {
-    const component = create(<Frame />);
+    const { container } = render(<Frame />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

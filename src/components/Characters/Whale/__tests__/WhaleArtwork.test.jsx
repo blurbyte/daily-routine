@@ -1,29 +1,29 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import WhaleArtwork from '../WhaleArtwork';
 
 describe('COMPONENT - Characters Whale', () => {
   it('renders confused robot when pose is not set', () => {
-    const component = create(<WhaleArtwork />);
+    const { container } = render(<WhaleArtwork />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it("renders sad robot when 'confess' pose is provided", () => {
-    const component = create(<WhaleArtwork pose="confess" />);
+    const { container } = render(<WhaleArtwork pose="confess" />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it("renders confused robot when 'default' pose is provided", () => {
-    const component = create(<WhaleArtwork pose="default" />);
+    const { container } = render(<WhaleArtwork pose="default" />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it("renders confident robot when 'brag' pose is provided", () => {
-    const component = create(<WhaleArtwork pose="brag" />);
+    const { container } = render(<WhaleArtwork pose="brag" />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

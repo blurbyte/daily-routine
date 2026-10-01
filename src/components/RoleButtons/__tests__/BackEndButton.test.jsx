@@ -1,13 +1,13 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BackEndButton from '../BackEndButton';
 
-jest.mock('../../RedirectButton', () => 'RedirectButton');
+vi.mock('../../RedirectButton', () => ({ default: 'mock-redirect-button' }));
 
 describe('COMPONENT - RoleButtons BackEndButton', () => {
   it('renders correctly', () => {
-    const component = create(<BackEndButton to="/backend">Back End</BackEndButton>);
+    const { container } = render(<BackEndButton to="/backend">Back End</BackEndButton>);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

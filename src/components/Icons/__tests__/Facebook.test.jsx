@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Facebook from '../Facebook';
 
 describe('COMPONENT - Icons Facebook', () => {
   it('renders correctly', () => {
-    const component = create(<Facebook />);
+    const { container } = render(<Facebook />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

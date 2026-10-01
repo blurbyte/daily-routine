@@ -1,43 +1,51 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { use } from 'react';
 
 import { FEMALE, MALE } from '../../constants/genders';
 import { GenderContext, GenderProvider } from '../GenderContext';
 
-function renderGenderContextConsumer(gender, handleGenderChange) {
+function MockConsumer() {
+  const { gender, handleGenderChange } = use(GenderContext);
+
   return (
     <>
       <span>{gender}</span>
-      <button onClick={handleGenderChange} />
+      <button onClick={() => handleGenderChange(FEMALE)} />
     </>
   );
 }
 
-afterEach(cleanup);
+function renderProvider() {
+  return render(
+    <GenderProvider>
+      <MockConsumer />
+    </GenderProvider>
+  );
+}
 
 describe('COMPONENT - GenderContext', () => {
-  it('renders GenderProvider corrently with gender `male`', () => {
-    const { container } = render(
-      <GenderProvider>
-        <GenderContext.Consumer>
-          {({ gender, handleGenderChange }) => renderGenderContextConsumer(gender, handleGenderChange(MALE))}
-        </GenderContext.Consumer>
-      </GenderProvider>
-    );
+  it('renders GenderProvider correctly with default gender `male`', () => {
+    const { container } = renderProvider();
 
     expect(container.querySelector('span')).toHaveTextContent(MALE);
   });
 
-  it('renders GenderProvider corrently with gender `female`', () => {
-    const { container } = render(
-      <GenderProvider>
-        <GenderContext.Consumer>
-          {({ gender, handleGenderChange }) => renderGenderContextConsumer(gender, handleGenderChange(FEMALE))}
-        </GenderContext.Consumer>
-      </GenderProvider>
-    );
+  it('changes gender to `female`', () => {
+    const { container } = renderProvider();
 
     fireEvent.click(container.querySelector('button'));
 
     expect(container.querySelector('span')).toHaveTextContent(FEMALE);
+  });
+
+  it('remembers selected gender', () => {
+    const { container, unmount } = renderProvider();
+
+    fireEvent.click(container.querySelector('button'));
+    unmount();
+
+    const { container: newContainer } = renderProvider();
+
+    expect(newContainer.querySelector('span')).toHaveTextContent(FEMALE);
   });
 });

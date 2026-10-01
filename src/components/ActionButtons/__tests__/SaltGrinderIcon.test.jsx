@@ -1,15 +1,15 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import SaltGrinderIcon from '../SaltGrinderIcon';
 
-jest.mock('../../Icons', () => ({
-  SaltGrinder: 'SaltGrinder'
+vi.mock('../../Icons', () => ({
+  SaltGrinder: 'mock-salt-grinder'
 }));
 
 describe('COMPONENT - ActionButtons SaltGrinderIcon', () => {
   it('renders correctly', () => {
-    const component = create(<SaltGrinderIcon />);
+    const { container } = render(<SaltGrinderIcon />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

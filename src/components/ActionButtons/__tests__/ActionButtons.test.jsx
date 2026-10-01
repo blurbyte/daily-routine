@@ -1,15 +1,12 @@
-import { cleanup, render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import { BACK_END_ROLE } from '../../../constants/roles';
 import ActionButtons from '../ActionButtons';
 
-jest.mock('../../../utils/quotesService.js', () => ({
+vi.mock('../../../utils/quotesService.js', () => ({
   getRandomQuoteID: () => '1'
 }));
-
-afterEach(cleanup);
-
 describe('COMPONENT - ActionButtons', () => {
   it('renders correct all roles button', () => {
     const { container } = render(

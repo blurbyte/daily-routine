@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Whale GenderFlower > renders correctly 1`] = `
+.c0 {
+  top: 5.6rem;
+  left: 8rem;
+}
+
+<div>
+  <mock-gender-flower
+    class="c0"
+  />
+</div>
+`;

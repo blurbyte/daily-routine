@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - navigation Wrapper > renders correctly 1`] = `
+.c0 {
+  display: grid;
+  grid-template-columns: repeat(, calc(33.33% - 1.4rem));
+  grid-gap: 2rem;
+  justify-content: center;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    display: block;
+  }
+}
+
+<div>
+  <nav
+    class="c0"
+  />
+</div>
+`;

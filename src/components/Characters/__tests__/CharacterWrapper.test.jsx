@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import CharacterWrapper from '../CharacterWrapper';
 
 describe('COMPONENT - Characters CharacterWrapper', () => {
   it('renders correctly', () => {
-    const component = create(<CharacterWrapper />);
+    const { container } = render(<CharacterWrapper />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

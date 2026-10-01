@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - AppBar Wrapper > renders correctly 1`] = `
+.c0 {
+  width: 100%;
+  background: #ffffff;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    justify-content: flex-start;
+  }
+}
+
+<div>
+  <header
+    class="c0"
+  />
+</div>
+`;

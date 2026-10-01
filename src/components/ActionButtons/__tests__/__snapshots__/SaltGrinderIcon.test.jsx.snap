@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - ActionButtons SaltGrinderIcon > renders correctly 1`] = `
+.c0 {
+  width: 8.8rem;
+  position: absolute;
+  bottom: -0.9rem;
+  right: -0.6rem;
+  z-index: 1;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    width: 6.6rem;
+    bottom: -0.9rem;
+    right: 0.4rem;
+  }
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <mock-salt-grinder />
+  </span>
+</div>
+`;

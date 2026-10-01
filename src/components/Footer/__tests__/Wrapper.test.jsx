@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Wrapper from '../Wrapper';
 
 describe('COMPONENT - Footer Wrapper', () => {
   it('renders correctly', () => {
-    const component = create(<Wrapper />);
+    const { container } = render(<Wrapper />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

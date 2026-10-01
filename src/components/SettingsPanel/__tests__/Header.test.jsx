@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Header from '../Header';
 
 describe('COMPONENT - SettingsPanel Header', () => {
   it('renders correctly', () => {
-    const component = create(<Header />);
+    const { container } = render(<Header />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import ConfusionMarks from '../ConfusionMarks';
 
 describe('COMPONENT - Characters ConfusionMarks', () => {
   it('renders correctly', () => {
-    const component = create(<ConfusionMarks />);
+    const { container } = render(<ConfusionMarks />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

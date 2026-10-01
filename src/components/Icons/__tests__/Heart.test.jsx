@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Heart from '../Heart';
 
 describe('COMPONENT - Icons Heart', () => {
   it('renders correctly', () => {
-    const component = create(<Heart />);
+    const { container } = render(<Heart />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import LongArrow from '../LongArrow';
 
 describe('COMPONENT - Icons LongArrow', () => {
   it('renders correctly', () => {
-    const component = create(<LongArrow />);
+    const { container } = render(<LongArrow />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

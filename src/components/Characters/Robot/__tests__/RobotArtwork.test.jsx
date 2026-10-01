@@ -1,20 +1,20 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import RobotArtwork from '../RobotArtwork';
 
-jest.mock('../Head', () => 'Head');
-jest.mock('../Neck', () => 'Neck');
-jest.mock('../Chest', () => 'Chest');
-jest.mock('../Shadow', () => 'Shadow');
-jest.mock('../RightArm', () => 'RightArm');
-jest.mock('../LeftArm', () => 'LeftArm');
-jest.mock('../RightLeg', () => 'RightLeg');
-jest.mock('../LeftLeg', () => 'LeftLeg');
+vi.mock('../Head', () => ({ default: 'mock-head' }));
+vi.mock('../Neck', () => ({ default: 'mock-neck' }));
+vi.mock('../Chest', () => ({ default: 'mock-chest' }));
+vi.mock('../Shadow', () => ({ default: 'mock-shadow' }));
+vi.mock('../RightArm', () => ({ default: 'mock-right-arm' }));
+vi.mock('../LeftArm', () => ({ default: 'mock-left-arm' }));
+vi.mock('../RightLeg', () => ({ default: 'mock-right-leg' }));
+vi.mock('../LeftLeg', () => ({ default: 'mock-left-leg' }));
 
 describe('COMPONENT - Characters Robot', () => {
   it('renders correctly', () => {
-    const component = create(<RobotArtwork />);
+    const { container } = render(<RobotArtwork />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

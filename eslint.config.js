@@ -30,7 +30,7 @@ export default defineConfig([
   {
     files: ['**/__tests__/**', 'src/setupTests.js'],
     languageOptions: {
-      globals: { ...globals.jest, ...globals.node }
+      globals: { ...globals.vitest, ...globals.node }
     }
   }
 ]);

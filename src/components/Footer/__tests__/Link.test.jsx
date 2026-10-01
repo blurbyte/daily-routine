@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Link from '../Link';
 
 describe('COMPONENT - Footer Link', () => {
   it('renders correctly', () => {
-    const component = create(<Link />);
+    const { container } = render(<Link />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Button Text > renders correctly 1`] = `
+.c0 {
+  max-width: 14rem;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    max-width: inherit;
+  }
+}
+
+<div>
+  <span
+    class="c0"
+  />
+</div>
+`;

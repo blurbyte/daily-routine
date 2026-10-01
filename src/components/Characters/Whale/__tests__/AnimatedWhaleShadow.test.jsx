@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import AnimatedWhaleShadow from '../AnimatedWhaleShadow';
 
 describe('COMPONENT - Characters Whale AnimatedWhaleShadow', () => {
   it('renders correctly', () => {
-    const component = create(<AnimatedWhaleShadow />);
+    const { container } = render(<AnimatedWhaleShadow />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

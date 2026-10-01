@@ -1,48 +1,48 @@
-import { MemoryRouter } from 'react-router-dom';
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import DevOpsRolePage from '../DevOpsRolePage';
 
-jest.mock('../../Characters', () => ({
-  Whale: 'Whale'
+vi.mock('../../Characters', () => ({
+  Whale: 'mock-whale'
 }));
-jest.mock('../../ActionButtons', () => 'ActionButtons');
-jest.mock('../../RoleBar', () => 'RoleBar');
-jest.mock('../../Page', () => 'Page');
-jest.mock('../../RoleContent', () => 'RoleContent');
-jest.mock('../../Section', () => 'Section');
-jest.mock('../../Character', () => 'Character');
-jest.mock('../../Characters/Whale', () => 'Whale');
-jest.mock('../QuoteBubble', () => 'QuoteBubble');
+vi.mock('../../ActionButtons', () => ({ default: 'mock-action-buttons' }));
+vi.mock('../../RoleBar', () => ({ default: 'mock-role-bar' }));
+vi.mock('../../Page', () => ({ default: 'mock-page' }));
+vi.mock('../../RoleContent', () => ({ default: 'mock-role-content' }));
+vi.mock('../../Section', () => ({ default: 'mock-section' }));
+vi.mock('../../Character', () => ({ default: 'mock-character' }));
+vi.mock('../../Characters/Whale', () => ({ default: 'mock-whale' }));
+vi.mock('../QuoteBubble', () => ({ default: 'mock-quote-bubble' }));
 
 describe('COMPONENT - DevOpsRolePage', () => {
   it('renders correctly for /devops path', () => {
-    const component = create(
+    const { container } = render(
       <MemoryRouter initialEntries={['/devops']}>
         <DevOpsRolePage />
       </MemoryRouter>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly for /devops/brag path', () => {
-    const component = create(
+    const { container } = render(
       <MemoryRouter initialEntries={['/devops/brag']}>
         <DevOpsRolePage />
       </MemoryRouter>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly for /devops/confess path', () => {
-    const component = create(
+    const { container } = render(
       <MemoryRouter initialEntries={['/devops/confess']}>
         <DevOpsRolePage />
       </MemoryRouter>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

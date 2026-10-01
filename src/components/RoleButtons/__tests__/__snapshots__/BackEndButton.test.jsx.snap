@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - RoleButtons BackEndButton > renders correctly 1`] = `
+.c0 {
+  background-color: #923be3;
+  border-bottom-color: #6926a6;
+}
+
+<div>
+  <mock-redirect-button
+    class="c0"
+    data-testid="backend-button"
+    to="backend"
+  >
+    Back End Developer
+  </mock-redirect-button>
+</div>
+`;

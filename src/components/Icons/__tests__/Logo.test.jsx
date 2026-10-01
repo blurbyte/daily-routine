@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Logo from '../Logo';
 
 describe('COMPONENT - Icons Logo', () => {
   it('renders correctly', () => {
-    const component = create(<Logo />);
+    const { container } = render(<Logo />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

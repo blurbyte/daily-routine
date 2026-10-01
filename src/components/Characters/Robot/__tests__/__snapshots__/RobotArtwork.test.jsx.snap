@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Robot > renders correctly 1`] = `
+.c0 {
+  position: relative;
+  height: 24.4rem;
+  width: 14.8rem;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <mock-head
+      pose="default"
+    />
+    <mock-neck />
+    <mock-chest />
+    <mock-right-arm />
+    <mock-left-arm />
+    <mock-right-leg />
+    <mock-left-leg />
+    <mock-shadow />
+  </div>
+</div>
+`;

@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - ActionButtons Wrapper > renders correctly 1`] = `
+.c0 {
+  position: relative;
+  padding: 0;
+  padding-top: 2rem;
+}
+
+.c1 {
+  background: #ffffff;
+}
+
+@media (max-width: 31.25em) {
+  .c1 {
+    background: inherit;
+  }
+}
+
+<div>
+  <section
+    class="c0 c1"
+  />
+</div>
+`;

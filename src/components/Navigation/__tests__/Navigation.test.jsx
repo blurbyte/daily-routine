@@ -1,9 +1,6 @@
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Navigation from '../Navigation';
-
-afterEach(cleanup);
-
 describe('COMPONENT - Navigation', () => {
   it('renders correct number of elements', () => {
     const { container } = render(

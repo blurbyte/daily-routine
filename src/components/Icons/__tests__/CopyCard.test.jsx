@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import CopyCard from '../CopyCards';
 
 describe('COMPONENT - Icons CopyCard', () => {
   it('renders correctly', () => {
-    const component = create(<CopyCard />);
+    const { container } = render(<CopyCard />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

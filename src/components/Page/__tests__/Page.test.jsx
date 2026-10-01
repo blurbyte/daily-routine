@@ -1,9 +1,6 @@
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Page from '../Page';
-
-afterEach(cleanup);
-
 describe('COMPONENT - Page', () => {
   it('renders correctly when no title is passed', () => {
     const { container } = render(

@@ -1,17 +1,17 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import SidePanel from '../SidePanel';
 
 describe('COMPONENT - SidePanel', () => {
   it('renders correctly when visible', () => {
-    const component = create(<SidePanel isVisible={true}>Taylor Swift</SidePanel>);
+    const { container } = render(<SidePanel isVisible={true}>Taylor Swift</SidePanel>);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders nothing if not visible', () => {
-    const component = create(<SidePanel isVisible={false}>Taylor Swift</SidePanel>);
+    const { container } = render(<SidePanel isVisible={false}>Taylor Swift</SidePanel>);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Whale FloatingAnimationWrapper > renders correctly 1`] = `
+.c0 {
+  padding: 0 0 3rem 0;
+  position: relative;
+  animation: k0 5s ease-in-out infinite;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+@keyframes k0 {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  />
+</div>
+`;

@@ -1,5 +1,5 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { fireEvent, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import {
   BACK_END_ROLE,
@@ -14,9 +14,7 @@ import { RouteTransitionAnimationContext } from '../../../context/RouteTransitio
 import RoleButtons from '../RoleButtons';
 
 describe('COMPONENT - RoleButtons', () => {
-  const animateAndRedirect = jest.fn();
-  afterEach(cleanup);
-
+  const animateAndRedirect = vi.fn();
   it('renders correct all roles button', () => {
     const { getByTestId } = render(
       <MemoryRouter initialEntries={['/']} initialIndex={1}>

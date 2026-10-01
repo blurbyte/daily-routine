@@ -1,25 +1,23 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { create } from 'react-test-renderer';
+import { fireEvent, render } from '@testing-library/react';
 
 import { FACEBOOK, TWITTER } from '../../../constants/socialMedia';
 import DesktopShare from '../DesktopShare';
 
-afterEach(cleanup);
-
 describe('COMPONENT - QuoteBubble DesktopShare', () => {
   it('renders correctly for Facebook variant', () => {
-    const component = create(<DesktopShare variant={FACEBOOK} />);
+    const { container } = render(<DesktopShare variant={FACEBOOK} />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly for Twitter variant', () => {
-    const component = create(<DesktopShare variant={TWITTER} />);
+    const { container } = render(<DesktopShare variant={TWITTER} />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
-  it('calls Navigator.share API with proper title and url', () => {
+  it('opens share window with proper url', () => {
+    const open = vi.spyOn(window, 'open').mockImplementation(() => {});
     const { container } = render(<DesktopShare variant={FACEBOOK} />);
 
     fireEvent.click(container.querySelector('button'));
@@ -29,6 +27,8 @@ describe('COMPONENT - QuoteBubble DesktopShare', () => {
     const expectedWindowFeatures =
       'toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=275';
 
-    expect(window.open).toBeCalledWith(expectedShareUrl, expectedWindowName, expectedWindowFeatures);
+    expect(open).toBeCalledWith(expectedShareUrl, expectedWindowName, expectedWindowFeatures);
+
+    open.mockRestore();
   });
 });

@@ -1,13 +1,13 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import GenderFlower from '../GenderFlower';
 
-jest.mock('../../CharactersDecors/GenderFlower', () => 'GenderFlower');
+vi.mock('../../CharactersDecors/GenderFlower', () => ({ default: 'mock-gender-flower' }));
 
 describe('COMPONENT - Characters Robot GenderFlower', () => {
   it('renders correctly', () => {
-    const component = create(<GenderFlower />);
+    const { container } = render(<GenderFlower />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Hitbox > renders correctly 1`] = `
+.c0 {
+  position: relative;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+  min-height: 4rem;
+  cursor: pointer;
+  outline: 0;
+  transition: all 150ms linear;
+  border-radius: 0.6rem;
+}
+
+.c0:focus-visible {
+  background-color: #ffdcfa;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;

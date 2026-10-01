@@ -1,23 +1,23 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import SpeechBubble from '../SpeechBubble';
 
 describe('COMPONENT - Icons SpeechBubble', () => {
   it('renders correctly when no variant is passed', () => {
-    const component = create(<SpeechBubble />);
+    const { container } = render(<SpeechBubble />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it("renders correctly when 'speech' variant is passed", () => {
-    const component = create(<SpeechBubble variant="speech" />);
+    const { container } = render(<SpeechBubble variant="speech" />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it("renders correctly when 'thought' variant is passed", () => {
-    const component = create(<SpeechBubble variant="thought" />);
+    const { container } = render(<SpeechBubble variant="thought" />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

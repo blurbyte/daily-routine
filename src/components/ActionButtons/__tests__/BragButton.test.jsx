@@ -1,11 +1,8 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { fireEvent, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import { FRONT_END_ROLE } from '../../../constants/roles';
 import BragButton from '../BragButton';
-
-afterEach(cleanup);
-
 describe('COMPONENT - RoleButton BragButton', () => {
   it('should contain proper elements', () => {
     const { container } = render(

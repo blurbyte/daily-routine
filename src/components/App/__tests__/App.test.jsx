@@ -1,13 +1,13 @@
-import { MemoryRouter } from 'react-router-dom';
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import App from '../App';
 
-jest.mock('../../RoleButtons', () => 'RoleButtons');
-jest.mock('../../AppBar', () => 'AppBar');
-jest.mock('../../Footer', () => 'Footer');
-jest.mock('../../Characters', () => ({
-  SugarCat: 'SugarCat'
+vi.mock('../../RoleButtons', () => ({ default: 'mock-role-buttons' }));
+vi.mock('../../AppBar', () => ({ default: 'mock-app-bar' }));
+vi.mock('../../Footer', () => ({ default: 'mock-footer' }));
+vi.mock('../../Characters', () => ({
+  SugarCat: 'mock-sugar-cat'
 }));
 
 describe('COMPONENT - App', () => {
@@ -17,12 +17,12 @@ describe('COMPONENT - App', () => {
       pathname: '/'
     };
 
-    const component = create(
+    const { container } = render(
       <MemoryRouter initialEntries={[mockLocation]}>
         <App />
       </MemoryRouter>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

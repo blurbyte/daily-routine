@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Robot Wrapper > renders correctly 1`] = `
+.c0 {
+  padding: 0;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.c1 {
+  padding-top: 0.4rem;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+<div>
+  <div
+    class="c0 c1"
+  />
+</div>
+`;

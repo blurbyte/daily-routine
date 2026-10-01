@@ -1,15 +1,12 @@
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { GenderProvider } from '../../../context/GenderContext';
 import SettingsPanel from '../SettingsPanel';
-
-afterEach(cleanup);
-
 describe('COMPONENT - SettingsPanel', () => {
   it('renders closed panel correctly', () => {
     const { queryByTestId } = render(
       <GenderProvider>
-        <SettingsPanel isVisible={false} onClose={jest.fn()} />
+        <SettingsPanel isVisible={false} onClose={vi.fn()} />
       </GenderProvider>
     );
 
@@ -19,7 +16,7 @@ describe('COMPONENT - SettingsPanel', () => {
   it('renders opened panel correctly', () => {
     const { getByTestId, container } = render(
       <GenderProvider>
-        <SettingsPanel isVisible={true} onClose={jest.fn()} />
+        <SettingsPanel isVisible={true} onClose={vi.fn()} />
       </GenderProvider>
     );
 

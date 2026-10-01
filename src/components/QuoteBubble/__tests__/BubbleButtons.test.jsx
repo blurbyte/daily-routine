@@ -1,28 +1,31 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BubbleButtons from '../BubbleButtons';
 
-jest.mock('../CopyButton', () => 'CopyButton');
-jest.mock('../DesktopShare', () => 'DesktopShare');
-jest.mock('../MobileShare', () => 'MobileShare');
+vi.mock('../CopyButton', () => ({ default: 'mock-copy-button' }));
+vi.mock('../DesktopShare', () => ({ default: 'mock-desktop-share' }));
+vi.mock('../MobileShare', () => ({ default: 'mock-mobile-share' }));
 
 describe('COMPONENT - QuoteBubble BubbleButtons', () => {
-  it('renders correctly if navigator share API is availible', () => {
-    // Navigator API is defined by default
-
-    const component = create(<BubbleButtons quote={'Test Quote'} />);
-
-    expect(component.toJSON()).toMatchSnapshot();
+  afterEach(() => {
+    delete navigator.share;
   });
 
-  it('renders correctly if navigator share API is NOT availible', () => {
-    global.navigator.share = undefined;
+  it('renders correctly if navigator share API is available', () => {
+    navigator.share = vi.fn();
 
-    const component = create(<BubbleButtons quote={'Test Quote'} />);
+    const { container } = render(<BubbleButtons quote={'Test Quote'} />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container.querySelectorAll('mock-mobile-share')).toHaveLength(1);
+    expect(container.querySelectorAll('mock-desktop-share')).toHaveLength(0);
+    expect(container).toMatchSnapshot();
+  });
 
-    // Resets variable to default value
-    global.navigator.share = jest.fn();
+  it('renders correctly if navigator share API is NOT available', () => {
+    const { container } = render(<BubbleButtons quote={'Test Quote'} />);
+
+    expect(container.querySelectorAll('mock-mobile-share')).toHaveLength(0);
+    expect(container.querySelectorAll('mock-desktop-share')).toHaveLength(2);
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,13 +1,13 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Wrapper from '../Wrapper';
 
-jest.mock('../SpeechBubbleArtwork', () => 'SpeechBubbleArtwork');
+vi.mock('../SpeechBubbleArtwork', () => ({ default: 'mock-speech-bubble-artwork' }));
 
 describe('COMPONENT - QuoteBubble Wrapper', () => {
   it('renders correctly', () => {
-    const component = create(<Wrapper />);
+    const { container } = render(<Wrapper />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Headline from '../Headline';
 
 describe('COMPONENT - Headline', () => {
   it('renders correctly', () => {
-    const component = create(<Headline />);
+    const { container } = render(<Headline />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

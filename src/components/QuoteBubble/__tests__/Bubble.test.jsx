@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Bubble from '../Bubble';
 
 describe('COMPONENT - QuoteBubble Bubble', () => {
   it('renders correctly', () => {
-    const component = create(<Bubble />);
+    const { container } = render(<Bubble />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

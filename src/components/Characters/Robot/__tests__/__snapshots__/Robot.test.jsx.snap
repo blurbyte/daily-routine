@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Robot > renders confusion marks if robot is in default pose 1`] = `
+.c0 {
+  padding: 0;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.c1 {
+  padding-top: 0.4rem;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+<div>
+  <div
+    class="c0 c1"
+  >
+    <mock-robot-artwork
+      pose="default"
+    />
+    <mock-confusion-marks />
+  </div>
+</div>
+`;
+
+exports[`COMPONENT - Characters Robot > renders correctly with default props 1`] = `
+.c0 {
+  padding: 0;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.c1 {
+  padding-top: 0.4rem;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    padding-bottom: 0;
+  }
+}
+
+<div>
+  <div
+    class="c0 c1"
+  >
+    <mock-robot-artwork
+      pose="default"
+    />
+    <mock-confusion-marks />
+  </div>
+</div>
+`;

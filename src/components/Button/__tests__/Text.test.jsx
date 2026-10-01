@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Text from '../Text';
 
 describe('COMPONENT - Button Text', () => {
   it('renders correctly', () => {
-    const component = create(<Text />);
+    const { container } = render(<Text />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

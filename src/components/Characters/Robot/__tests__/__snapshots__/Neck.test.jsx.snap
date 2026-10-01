@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - Characters Robot Neck > renders correctly 1`] = `
+.c0 {
+  animation: k0 110ms ease-in-out infinite;
+  position: absolute;
+  top: 5.6rem;
+  left: 4.4rem;
+  z-index: 1;
+}
+
+@keyframes k0 {
+  0% {
+    transform: translateX(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateX(0) rotate(10deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(-5deg);
+  }
+}
+
+<div>
+  <svg
+    aria-hidden="true"
+    class="c0"
+    height="16"
+    viewBox="0 0 52 16"
+    width="52"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2.326 0h47.795v16H2.326z"
+      fill="currentColor"
+    />
+    <path
+      d="M.412 16L.956 0H4.24v16H.412zm51.176 0V0h-2.933v16h2.933z"
+      fill="#222"
+    />
+  </svg>
+</div>
+`;

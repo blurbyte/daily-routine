@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - RoleButtons DevOpsButton > renders correctly 1`] = `
+.c0 {
+  background-color: #2784e6;
+  border-bottom-color: #1558a1;
+}
+
+<div>
+  <mock-redirect-button
+    class="c0"
+    data-testid="devops-button"
+    to="devops"
+  >
+    Dev Ops Engineer
+  </mock-redirect-button>
+</div>
+`;

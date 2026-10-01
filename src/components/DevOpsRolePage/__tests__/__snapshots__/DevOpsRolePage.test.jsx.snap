@@ -1,0 +1,70 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - DevOpsRolePage > renders correctly for /devops path 1`] = `
+<div>
+  <mock-page
+    title="Dev Ops Engineer"
+  >
+    <mock-role-bar
+      label="Dev Ops Engineer"
+    />
+    <mock-section>
+      <mock-role-content>
+        <mock-quote-bubble />
+        <mock-character>
+          <mock-whale />
+        </mock-character>
+      </mock-role-content>
+    </mock-section>
+    <mock-action-buttons
+      role="devops"
+    />
+  </mock-page>
+</div>
+`;
+
+exports[`COMPONENT - DevOpsRolePage > renders correctly for /devops/brag path 1`] = `
+<div>
+  <mock-page
+    title="Dev Ops Engineer"
+  >
+    <mock-role-bar
+      label="Dev Ops Engineer"
+    />
+    <mock-section>
+      <mock-role-content>
+        <mock-quote-bubble />
+        <mock-character>
+          <mock-whale />
+        </mock-character>
+      </mock-role-content>
+    </mock-section>
+    <mock-action-buttons
+      role="devops"
+    />
+  </mock-page>
+</div>
+`;
+
+exports[`COMPONENT - DevOpsRolePage > renders correctly for /devops/confess path 1`] = `
+<div>
+  <mock-page
+    title="Dev Ops Engineer"
+  >
+    <mock-role-bar
+      label="Dev Ops Engineer"
+    />
+    <mock-section>
+      <mock-role-content>
+        <mock-quote-bubble />
+        <mock-character>
+          <mock-whale />
+        </mock-character>
+      </mock-role-content>
+    </mock-section>
+    <mock-action-buttons
+      role="devops"
+    />
+  </mock-page>
+</div>
+`;

@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Hitbox from '../Hitbox';
 
 describe('COMPONENT - Hitbox', () => {
   it('renders correctly', () => {
-    const component = create(<Hitbox />);
+    const { container } = render(<Hitbox />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

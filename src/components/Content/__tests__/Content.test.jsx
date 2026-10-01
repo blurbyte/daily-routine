@@ -1,17 +1,17 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Content from '../Content';
 
 describe('COMPONENT - Content', () => {
   it('renders correctly', () => {
-    const component = create(<Content />);
+    const { container } = render(<Content />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('narrow content renders correctly', () => {
-    const component = create(<Content narrow />);
+    const { container } = render(<Content narrow />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

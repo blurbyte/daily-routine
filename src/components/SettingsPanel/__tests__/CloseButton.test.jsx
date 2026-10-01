@@ -1,15 +1,15 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import CloseButton from '../CloseButton';
 
-jest.mock('../../Icons', () => ({
-  Cross: 'Cross'
+vi.mock('../../Icons', () => ({
+  Cross: 'mock-cross'
 }));
 
 describe('COMPONENT - SettingsPanel CloseButton', () => {
   it('renders correctly', () => {
-    const component = create(<CloseButton />);
+    const { container } = render(<CloseButton />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

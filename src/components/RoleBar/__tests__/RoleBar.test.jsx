@@ -1,14 +1,14 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import { FRONT_END_ROLE_LABEL } from '../../../constants/roles';
 import RoleBar from '../RoleBar';
 
-jest.mock('../../Icons/Gear', () => 'GearIcon');
+vi.mock('../../Icons/Gear', () => ({ default: 'mock-gear-icon' }));
 
 describe('COMPONENT - RoleBar', () => {
   it('renders correctly', () => {
-    const component = create(<RoleBar label={FRONT_END_ROLE_LABEL} />);
+    const { container } = render(<RoleBar label={FRONT_END_ROLE_LABEL} />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

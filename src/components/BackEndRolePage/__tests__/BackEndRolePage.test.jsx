@@ -1,48 +1,48 @@
-import { MemoryRouter } from 'react-router-dom';
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import BackEndRolePage from '../BackEndRolePage';
 
-jest.mock('../../Characters', () => ({
-  Robot: 'Robot'
+vi.mock('../../Characters', () => ({
+  Robot: 'mock-robot'
 }));
-jest.mock('../../ActionButtons', () => 'ActionButtons');
-jest.mock('../../RoleBar', () => 'RoleBar');
-jest.mock('../../Page', () => 'Page');
-jest.mock('../../RoleContent', () => 'RoleContent');
-jest.mock('../../Section', () => 'Section');
-jest.mock('../../Character', () => 'Character');
-jest.mock('../../Characters/Robot', () => 'Robot');
-jest.mock('../QuoteBubble', () => 'QuoteBubble');
+vi.mock('../../ActionButtons', () => ({ default: 'mock-action-buttons' }));
+vi.mock('../../RoleBar', () => ({ default: 'mock-role-bar' }));
+vi.mock('../../Page', () => ({ default: 'mock-page' }));
+vi.mock('../../RoleContent', () => ({ default: 'mock-role-content' }));
+vi.mock('../../Section', () => ({ default: 'mock-section' }));
+vi.mock('../../Character', () => ({ default: 'mock-character' }));
+vi.mock('../../Characters/Robot', () => ({ default: 'mock-robot' }));
+vi.mock('../QuoteBubble', () => ({ default: 'mock-quote-bubble' }));
 
 describe('COMPONENT - BackEndRolePage', () => {
   it('renders correctly for /backend path', () => {
-    const component = create(
+    const { container } = render(
       <MemoryRouter initialEntries={['/backend']}>
         <BackEndRolePage />
       </MemoryRouter>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly for /backend/brag path', () => {
-    const component = create(
+    const { container } = render(
       <MemoryRouter initialEntries={['/backend/brag']}>
         <BackEndRolePage />
       </MemoryRouter>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders correctly for /backend/confess path', () => {
-    const component = create(
+    const { container } = render(
       <MemoryRouter initialEntries={['/backend/confess']}>
         <BackEndRolePage />
       </MemoryRouter>
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Tear from '../Tear';
 
 describe('COMPONENT - Characters Tear', () => {
   it('renders correctly', () => {
-    const component = create(<Tear />);
+    const { container } = render(<Tear />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

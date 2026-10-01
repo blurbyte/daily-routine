@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import LeftLeg from '../LeftLeg';
 
 describe('COMPONENT - Characters Robot LeftLeg', () => {
   it('renders correctly', () => {
-    const component = create(<LeftLeg />);
+    const { container } = render(<LeftLeg />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Share from '../Share';
 
 describe('COMPONENT - Icons Share', () => {
   it('renders correctly', () => {
-    const component = create(<Share />);
+    const { container } = render(<Share />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

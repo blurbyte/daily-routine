@@ -1,10 +1,8 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import ErrorBoundary from '../ErrorBoundary';
 
 describe('COMPONENT - ErrorBoundary', () => {
-  let consoleErrorSpy;
-
   function ChildComponent() {
     return <p>I'm child component!</p>;
   }
@@ -14,34 +12,33 @@ describe('COMPONENT - ErrorBoundary', () => {
   }
 
   beforeAll(() => {
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    // React reports caught errors to the console
+    vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterAll(() => {
-    consoleErrorSpy.mockRestore();
+    vi.restoreAllMocks();
   });
 
   it('renders the child component if there is no error', () => {
-    const component = create(
+    const { container, queryByRole } = render(
       <ErrorBoundary>
         <ChildComponent />
       </ErrorBoundary>
     );
-    const instance = component.getInstance();
 
-    expect(component.toJSON()).toMatchSnapshot();
-    expect(instance.state.hasError).toEqual(false);
+    expect(container.querySelector('p')).toHaveTextContent("I'm child component!");
+    expect(queryByRole('alert')).toBeNull();
   });
 
   it('renders fallback Error component if there is error', () => {
-    const component = create(
+    const { container, getByRole } = render(
       <ErrorBoundary>
         <ComponentWithError />
       </ErrorBoundary>
     );
-    const instance = component.getInstance();
 
-    expect(component.toJSON()).toMatchSnapshot();
-    expect(instance.state.hasError).toEqual(true);
+    expect(container.querySelector('p')).toBeNull();
+    expect(getByRole('alert')).toHaveTextContent('Oops, something went wrong.');
   });
 });

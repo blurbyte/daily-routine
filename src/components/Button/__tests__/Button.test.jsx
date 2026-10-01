@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Button from '../Button';
 
 describe('COMPONENT - Button', () => {
   it('renders correctly', () => {
-    const component = create(<Button />);
+    const { container } = render(<Button />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

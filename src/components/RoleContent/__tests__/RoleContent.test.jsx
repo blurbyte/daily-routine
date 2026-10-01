@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import RoleContent from '../RoleContent';
 
 describe('COMPONENT - RoleContent', () => {
   it('renders correctly', () => {
-    const component = create(<RoleContent />);
+    const { container } = render(<RoleContent />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

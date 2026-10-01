@@ -1,10 +1,7 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { GenderProvider } from '../../../context/GenderContext';
 import SettingsTrigger from '../SettingsTrigger';
-
-afterEach(cleanup);
-
 describe('COMPONENT - SettingsTrigger', () => {
   it('renders closed settings panel correctly', () => {
     const { queryByTestId } = render(

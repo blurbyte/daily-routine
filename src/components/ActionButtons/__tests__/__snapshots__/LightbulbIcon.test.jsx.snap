@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - ActionButtons LightbulbIcon > renders correctly 1`] = `
+.c0 {
+  width: 8.8rem;
+  position: absolute;
+  bottom: -1rem;
+  right: -0.8rem;
+  z-index: 1;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    width: 6.6rem;
+    bottom: -1rem;
+    right: 0;
+  }
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <mock-lightbulb />
+  </span>
+</div>
+`;

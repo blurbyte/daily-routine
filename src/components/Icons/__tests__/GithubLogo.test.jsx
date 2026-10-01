@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import GithubLogo from '../GithubLogo';
 
 describe('COMPONENT - Icons GithubLogo', () => {
   it('renders correctly', () => {
-    const component = create(<GithubLogo />);
+    const { container } = render(<GithubLogo />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

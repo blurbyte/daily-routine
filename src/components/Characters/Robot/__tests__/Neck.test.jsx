@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import Neck from '../Neck';
 
 describe('COMPONENT - Characters Robot Neck', () => {
   it('renders correctly', () => {
-    const component = create(<Neck />);
+    const { container } = render(<Neck />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

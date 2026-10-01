@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import CopyIndicator from '../CopyIndicator';
 
 describe('COMPONENT - Icons CopyIndicator', () => {
   it('renders correctly', () => {
-    const component = create(<CopyIndicator />);
+    const { container } = render(<CopyIndicator />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - RoleButtons FrontEndButton > renders correctly 1`] = `
+.c0 {
+  background-color: #f5ca1d;
+  border-bottom-color: #d18b13;
+}
+
+<div>
+  <mock-redirect-button
+    class="c0"
+    data-testid="frontend-button"
+    to="frontend"
+  >
+    Front End Developer
+  </mock-redirect-button>
+</div>
+`;

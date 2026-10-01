@@ -1,13 +1,13 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BubbleTail from '../BubbleTail';
 
-jest.mock('../BubbleTailArtwork', () => 'BubbleTailArtwork');
+vi.mock('../BubbleTailArtwork', () => ({ default: 'mock-bubble-tail-artwork' }));
 
 describe('COMPONENT - QuoteBubble BubbleTail', () => {
   it('renders correctly', () => {
-    const component = create(<BubbleTail />);
+    const { container } = render(<BubbleTail />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

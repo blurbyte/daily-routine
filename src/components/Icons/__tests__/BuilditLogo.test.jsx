@@ -1,11 +1,11 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BuilditLogo from '../BuilditLogo';
 
 describe('COMPONENT - Icons BuilditLogo', () => {
   it('renders correctly', () => {
-    const component = create(<BuilditLogo />);
+    const { container } = render(<BuilditLogo />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

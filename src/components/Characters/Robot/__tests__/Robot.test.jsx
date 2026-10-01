@@ -1,21 +1,21 @@
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import { DEFAULT } from '../../../../constants/roleActions';
 import Robot from '../Robot';
 
-jest.mock('../ConfusionMarks', () => 'ConfusionMarks');
-jest.mock('../RobotArtwork', () => 'RobotArtwork');
+vi.mock('../ConfusionMarks', () => ({ default: 'mock-confusion-marks' }));
+vi.mock('../RobotArtwork', () => ({ default: 'mock-robot-artwork' }));
 
 describe('COMPONENT - Characters Robot', () => {
   it('renders correctly with default props', () => {
-    const component = create(<Robot />);
+    const { container } = render(<Robot />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders confusion marks if robot is in default pose', () => {
-    const component = create(<Robot pose={DEFAULT} />);
+    const { container } = render(<Robot pose={DEFAULT} />);
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

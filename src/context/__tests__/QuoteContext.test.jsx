@@ -1,37 +1,36 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { use } from 'react';
 
 import { QuoteContext, QuoteProvider } from '../QuoteContext';
 
-function renderQuoteContextConsumer(quote, handleQuoteChange) {
+function MockConsumer() {
+  const { quote, handleQuoteChange } = use(QuoteContext);
+
   return (
     <>
       {quote && <span>{quote}</span>}
-      <button onClick={handleQuoteChange} />
+      <button onClick={() => handleQuoteChange('Taylor Swift')} />
     </>
   );
 }
 
-afterEach(cleanup);
+function renderProvider() {
+  return render(
+    <QuoteProvider>
+      <MockConsumer />
+    </QuoteProvider>
+  );
+}
 
 describe('COMPONENT - QuoteContext', () => {
-  it('renders corrently with default value', () => {
-    const { container } = render(
-      <QuoteProvider>
-        <QuoteContext.Consumer>{({ quote }) => renderQuoteContextConsumer(quote)}</QuoteContext.Consumer>
-      </QuoteProvider>
-    );
+  it('renders correctly with default value', () => {
+    const { container } = renderProvider();
 
     expect(container.querySelector('span')).toBeNull();
   });
 
   it('handles quote change correctly', () => {
-    const { container } = render(
-      <QuoteProvider>
-        <QuoteContext.Consumer>
-          {({ quote, handleQuoteChange }) => renderQuoteContextConsumer(quote, handleQuoteChange('Taylor Swift'))}
-        </QuoteContext.Consumer>
-      </QuoteProvider>
-    );
+    const { container } = renderProvider();
 
     fireEvent.click(container.querySelector('button'));
 

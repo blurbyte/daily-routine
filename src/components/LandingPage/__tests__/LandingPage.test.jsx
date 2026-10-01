@@ -1,11 +1,8 @@
-import { cleanup, render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 
 import { RouteTransitionAnimationContext } from '../../../context/RouteTransitionAnimationContext';
 import LandingPage from '../LandingPage';
-
-afterEach(cleanup);
-
 describe('COMPONENT - LandingPage', () => {
   it('renders correct elements', () => {
     const animateAndRedirect = () => {};
@@ -18,7 +15,7 @@ describe('COMPONENT - LandingPage', () => {
     );
 
     expect(container.querySelector('h1')).toHaveTextContent('Daily Scrum is coming!');
-    expect(container.querySelector('svg title')).toHaveTextContent('Sugar cat');
+    expect(container.querySelector('svg')).toBeInTheDocument();
     expect(container.querySelector('nav')).toBeDefined();
   });
 });

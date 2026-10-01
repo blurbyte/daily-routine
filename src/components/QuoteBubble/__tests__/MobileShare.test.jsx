@@ -1,15 +1,20 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { create } from 'react-test-renderer';
+import { fireEvent, render } from '@testing-library/react';
 
 import MobileShare from '../MobileShare';
 
-afterEach(cleanup);
-
 describe('COMPONENT - QuoteBubble MobileShare', () => {
-  it('renders correctly', () => {
-    const component = create(<MobileShare />);
+  beforeEach(() => {
+    navigator.share = vi.fn();
+  });
 
-    expect(component.toJSON()).toMatchSnapshot();
+  afterEach(() => {
+    delete navigator.share;
+  });
+
+  it('renders correctly', () => {
+    const { container } = render(<MobileShare />);
+
+    expect(container).toMatchSnapshot();
   });
 
   it('calls Navigator.share API with proper title and url', () => {

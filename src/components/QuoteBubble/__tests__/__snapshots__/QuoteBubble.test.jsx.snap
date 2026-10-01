@@ -1,0 +1,55 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - QuoteBubble > renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-height: 9.6rem;
+  min-width: 21rem;
+  max-width: 36rem;
+  background: url(mock-speech-bubble-artwork) no-repeat;
+  background-size: 100% 100%;
+  transform-origin: 50% 100%;
+  z-index: -1;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    max-width: 100%;
+  }
+}
+
+<div>
+  <mock-wrapper>
+    <section
+      class="c0"
+      style="opacity: 0; transform: perspective(600px) rotateX(45deg) translateY(-20px) scale(0.8); color: rgb(255, 255, 255);"
+    >
+      <mock-quote
+        data-testid="quote-error-message"
+        error=""
+      >
+        <strong>
+          4o4 Error
+        </strong>
+         – The blockchain distributed ledger failed to achieve quorum with deep learning neural network of your pseudo-generated Turning complaisant daily message.
+      </mock-quote>
+      <mock-bubble-tail
+        variant="thought"
+      />
+    </section>
+    <section
+      class="c0"
+      style="opacity: 0; transform: perspective(600px) rotateX(45deg) translateY(-20px) scale(0.8);"
+    >
+      <mock-quote>
+        Daily in 5 minutes and I'm still not sure what to say...
+      </mock-quote>
+      <mock-bubble-tail
+        variant="thought"
+      />
+    </section>
+  </mock-wrapper>
+</div>
+`;

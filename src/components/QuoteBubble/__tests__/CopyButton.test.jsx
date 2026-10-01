@@ -1,14 +1,10 @@
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import CopyButton from '../CopyButton';
-
-afterEach(cleanup);
-
 describe('COMPONENT - QuoteBubble CopyButton', () => {
   it('renders correctly', () => {
-    const { container } = render(<CopyButton valueToCopy="Taylor Swift" />);
+    const { getByRole } = render(<CopyButton valueToCopy="Taylor Swift" />);
 
-    expect(container.querySelector('button')).toBeDefined();
-    expect(container.querySelector('svg title')).toHaveTextContent('Copy');
+    expect(getByRole('button', { name: 'Copy quote' })).toBeInTheDocument();
   });
 });

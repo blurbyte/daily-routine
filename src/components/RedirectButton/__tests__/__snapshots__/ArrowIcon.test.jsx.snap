@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - ArrowIcon > renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 2.4rem;
+  z-index: 1;
+}
+
+@media (max-width: 31.25em) {
+  .c0 {
+    bottom: 1.4rem;
+  }
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <mock-long-arrow />
+  </span>
+</div>
+`;

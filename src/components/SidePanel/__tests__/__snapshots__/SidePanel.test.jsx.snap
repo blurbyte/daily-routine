@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`COMPONENT - SidePanel > renders correctly when visible 1`] = `
+.c0 {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #222222;
+  z-index: 8000;
+}
+
+.c1 {
+  height: 100%;
+  width: 26rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 9000;
+}
+
+<div>
+  <div
+    class="c0"
+    style="opacity: 0;"
+  />
+  <section
+    class="c1"
+    data-testid="side-panel"
+    style="transform: translateX(26rem);"
+  >
+    Taylor Swift
+  </section>
+</div>
+`;
+
+exports[`COMPONENT - SidePanel > renders nothing if not visible 1`] = `<div />`;
