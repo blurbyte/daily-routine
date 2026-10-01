@@ -1,7 +1,7 @@
 import Hitbox from '../Hitbox';
 import { Share } from '../Icons';
 
-function MobileShare() {
+function ShareButton() {
   const share = () => {
     navigator.share({
       title: document.title,
@@ -16,4 +16,4 @@ function MobileShare() {
   );
 }
 
-export default MobileShare;
+export default ShareButton;

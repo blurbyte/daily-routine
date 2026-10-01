@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import MobileShare from '../MobileShare';
+import ShareButton from '../ShareButton';
 
-describe('COMPONENT - QuoteBubble MobileShare', () => {
+describe('COMPONENT - QuoteBubble ShareButton', () => {
   beforeEach(() => {
     navigator.share = vi.fn();
   });
@@ -12,13 +12,13 @@ describe('COMPONENT - QuoteBubble MobileShare', () => {
   });
 
   it('renders correctly', () => {
-    const { container } = render(<MobileShare />);
+    const { container } = render(<ShareButton />);
 
     expect(container).toMatchSnapshot();
   });
 
   it('calls Navigator.share API with proper title and url', () => {
-    const { container } = render(<MobileShare />);
+    const { container } = render(<ShareButton />);
 
     fireEvent.click(container.querySelector('button'));
 

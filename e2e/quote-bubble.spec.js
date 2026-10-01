@@ -15,25 +15,14 @@ test.describe('Quote bubble', () => {
       await page.addInitScript(() => {
         // Web Share API availability depends on the OS
         delete Navigator.prototype.share;
-
-        window.openCalls = [];
-        window.open = (...args) => window.openCalls.push(args);
       });
       await showQuote(page);
     });
 
-    test('should open suitable Facebook share window', async ({ page }) => {
-      await page.getByTestId('facebook-share-button').click();
+    test('should not show share button', async ({ page }) => {
+      await expect(page.getByTestId('copy-to-clipboard-button')).toBeVisible();
 
-      const [shareUrl] = await page.evaluate(() => window.openCalls[0]);
-      expect(shareUrl).toContain('http://www.facebook.com/');
-    });
-
-    test('should open suitable Twitter share window', async ({ page }) => {
-      await page.getByTestId('twitter-share-button').click();
-
-      const [shareUrl] = await page.evaluate(() => window.openCalls[0]);
-      expect(shareUrl).toContain('http://www.twitter.com/');
+      await expect(page.getByRole('button', { name: 'Share on social media' })).toHaveCount(0);
     });
   });
 

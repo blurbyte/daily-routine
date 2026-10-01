@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`COMPONENT - QuoteBubble BubbleButtons > renders correctly if navigator share API is NOT available 1`] = `
+exports[`COMPONENT - QuoteBubble BubbleButtons > renders only copy button if navigator share API is NOT available 1`] = `
 .c0 {
   display: flex;
   justify-content: flex-end;
@@ -12,12 +12,6 @@ exports[`COMPONENT - QuoteBubble BubbleButtons > renders correctly if navigator 
   <div
     class="c0"
   >
-    <mock-desktop-share
-      variant="facebook"
-    />
-    <mock-desktop-share
-      variant="twitter"
-    />
     <mock-copy-button
       valuetocopy="Test Quote"
     />
@@ -25,7 +19,7 @@ exports[`COMPONENT - QuoteBubble BubbleButtons > renders correctly if navigator 
 </div>
 `;
 
-exports[`COMPONENT - QuoteBubble BubbleButtons > renders correctly if navigator share API is available 1`] = `
+exports[`COMPONENT - QuoteBubble BubbleButtons > renders share button if navigator share API is available 1`] = `
 .c0 {
   display: flex;
   justify-content: flex-end;
@@ -37,7 +31,7 @@ exports[`COMPONENT - QuoteBubble BubbleButtons > renders correctly if navigator 
   <div
     class="c0"
   >
-    <mock-mobile-share />
+    <mock-share-button />
     <mock-copy-button
       valuetocopy="Test Quote"
     />

@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { FACEBOOK, TWITTER } from '../../constants/socialMedia';
 import CopyButton from './CopyButton';
-import DesktopShare from './DesktopShare';
-import MobileShare from './MobileShare';
+import ShareButton from './ShareButton';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,13 +16,7 @@ function BubbleButtons({ quote }) {
 
   return (
     <Wrapper>
-      {canUseShareAPI && <MobileShare />}
-      {!canUseShareAPI && (
-        <>
-          <DesktopShare variant={FACEBOOK} />
-          <DesktopShare variant={TWITTER} />
-        </>
-      )}
+      {canUseShareAPI && <ShareButton />}
       <CopyButton valueToCopy={quote} />
     </Wrapper>
   );
