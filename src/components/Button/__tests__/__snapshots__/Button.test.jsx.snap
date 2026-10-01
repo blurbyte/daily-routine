@@ -53,6 +53,7 @@ exports[`COMPONENT - Button > renders correctly 1`] = `
 <div>
   <button
     class="c0"
+    draggable="false"
     style="border-bottom-width: 3px;"
   >
     <span

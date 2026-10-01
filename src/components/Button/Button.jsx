@@ -27,8 +27,11 @@ function Button({ to, onClick = () => {}, children, ...props }) {
     <StyledButton
       {...mappedProps}
       style={animationStyles}
+      draggable={false}
       onPointerDown={() => setIsClicked(true)}
       onPointerUp={() => setIsClicked(false)}
+      onPointerLeave={() => setIsClicked(false)}
+      onPointerCancel={() => setIsClicked(false)}
     >
       <Text>{children}</Text>
     </StyledButton>
