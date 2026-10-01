@@ -16,7 +16,7 @@ describe('COMPONENT - SettingsTrigger', () => {
   });
 
   it('renders settings panel correctly after it got opened', () => {
-    const { getByTestId, container } = render(
+    const { getByTestId, getByRole } = render(
       <GenderProvider>
         <SettingsTrigger />
       </GenderProvider>
@@ -25,6 +25,6 @@ describe('COMPONENT - SettingsTrigger', () => {
     fireEvent.click(getByTestId('gear-button'));
 
     expect(getByTestId('close-button')).toBeDefined();
-    expect(container.querySelector('h2')).toHaveTextContent('My role settings');
+    expect(getByRole('heading', { name: 'My role settings' })).toBeInTheDocument();
   });
 });

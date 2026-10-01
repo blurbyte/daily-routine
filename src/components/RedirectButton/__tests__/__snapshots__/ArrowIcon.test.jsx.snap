@@ -8,9 +8,27 @@ exports[`COMPONENT - ArrowIcon > renders correctly 1`] = `
   z-index: 1;
 }
 
+a:hover .c0 {
+  animation: k0 400ms ease-in-out;
+}
+
 @media (max-width: 31.25em) {
   .c0 {
     bottom: 1.4rem;
+  }
+}
+
+@keyframes k0 {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0.4rem);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 

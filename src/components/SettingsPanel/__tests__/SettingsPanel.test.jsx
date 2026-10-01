@@ -14,13 +14,13 @@ describe('COMPONENT - SettingsPanel', () => {
   });
 
   it('renders opened panel correctly', () => {
-    const { getByTestId, container } = render(
+    const { getByTestId, getByRole } = render(
       <GenderProvider>
         <SettingsPanel isVisible={true} onClose={vi.fn()} />
       </GenderProvider>
     );
 
     expect(getByTestId('close-button')).toBeDefined();
-    expect(container.querySelector('h2')).toHaveTextContent('My role settings');
+    expect(getByRole('heading', { name: 'My role settings' })).toBeInTheDocument();
   });
 });

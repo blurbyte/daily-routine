@@ -17,13 +17,13 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@base-ui/react": "1.8.0",
+    "@base-ui/utils": "0.4.0",
     "@react-spring/web": "10.1.2",
-    "body-scroll-lock": "2.6.4",
     "react": "19.3.0",
     "react-copy-to-clipboard": "5.1.1",
     "react-dom": "19.3.0",
     "react-error-boundary": "6.1.6",
-    "react-focus-lock": "2.13.7",
     "react-router": "7.18.4",
     "styled-components": "6.5.3"
   },

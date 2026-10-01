@@ -9,6 +9,7 @@ exports[`COMPONENT - RoleButtons Wrapper > renders correctly 1`] = `
 
 .c1 {
   background: #ffffff;
+  padding-top: 3rem;
 }
 
 @media (max-width: 31.25em) {
