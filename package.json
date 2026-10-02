@@ -6,7 +6,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "start:build": "vite build && vite preview",
+    "start:build": "vite build && node server.js",
     "test": "vitest",
     "test:update": "vitest run --update",
     "e2e": "playwright test",
