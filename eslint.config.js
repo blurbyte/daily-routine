@@ -34,6 +34,15 @@ export default defineConfig([
     }
   },
   {
+    files: ['server.js'],
+    languageOptions: {
+      globals: globals.node
+    },
+    rules: {
+      'no-console': 'off'
+    }
+  },
+  {
     files: ['**/__tests__/**', 'src/setupTests.js'],
     languageOptions: {
       globals: { ...globals.vitest, ...globals.node }
